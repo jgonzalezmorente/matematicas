@@ -1,0 +1,87 @@
+
+\chapter{Criptosistemas simétricos o de clave privada}
+\section{Entropía}
+
+\begin{teo}
+    Una función continua definida sobre el conjunto de funciones de distribución de longitud $n$ que cumpla las condiciones:
+
+    \begin{enumerate}[label=(\arabic*)]
+        \item\label{item:l1-i1} $H\left(\dfrac{1}{n},\dots,\dfrac{1}{n}\right) < H\left(\dfrac{1}{n+1},\dots,\dfrac{1}{n+1}\right)$
+        \item\label{item:l1-i2} $\displaystyle H\left(\dfrac{1}{n},\dots,\dfrac{1}{n}\right) = H\left(\dfrac{k_1}{n},\dots,\dfrac{k_m}{n}\right)+\sum_{i=1, k_i\neq 0}^m\dfrac{k_i}{n}H\left(\dfrac{1}{k_i},\dots,\dfrac{1}{k_i}\right)$ siempre que $\displaystyle \sum_{i=1}^mk_i=n$
+    \end{enumerate}
+    es de la forma
+    $$H(p_1,\dots,p_n)=\sum_{i=1, p_i\ne 0}^np_i\log_b\left(\dfrac{1}{p_i}\right)=-\sum_{i=1, p_i\ne 0}^np_i\log_bp_i$$
+    para algún $b>1$. 
+\end{teo}
+
+\begin{proof}
+    Si $m|n$, entonces
+    \begin{equation*}
+        \begin{split}
+            H\left(\frac{1}{n},\dots,\frac{1}{n}\right) &= H\left(\frac{m}{n},\dots,\frac{m}{n}\right) + \sum_{i=1}^{n/m}\frac{m}{n}H\left(\frac{1}{m},\dots,\frac{1}{m}\right) = \\
+            &= H\left(\frac{m}{n},\dots,\frac{m}{n}\right) + H\left(\frac{1}{m},\dots,\frac{1}{m}\right)
+        \end{split}
+    \end{equation*}
+    En particular, si $n=m^s$, entonces
+    $$H\left(\frac{1}{m^s},\dots,\frac{1}{m^s}\right) = H\left(\frac{1}{m^{s-1}},\dots,\frac{1}{m^{s-1}}\right) + H\left(\frac{1}{m},\dots,\frac{1}{m}\right)$$
+    Sea $g(n)=H\left(\frac{1}{n},\dots,\frac{1}{n}\right)$, entonces
+    $$g(m^s)=g(m^{s-1})+g(m)$$
+    y por inducción sobre $s$, se obtiene que
+    $$g(m^s)=sg(m)$$
+    
+    La condición \ref{item:l1-i1}, implica que $g$ es estrictamente creciente y, por tanto, para todo $m>1$ tenemos $g(m^s)<g(m^{s+1})$, es decir, $sg(m)<(s+1)g(m)$. Por tanto $g(m)$ es positivo.
+
+    Sean $n$, $k$ y $m$ enteros mayores a $1$ y sea $s$ 
+    $$s=\max\conj{j\in\ZZ : j\geq 0, m^j\leq n^k}$$
+    entonces $m^s\leq n^k<m^{s+1}$. Como $g$ es estrictamente creceinte, $g(m^s)\leq g(n^k)\leq g(m^{s+1})$, o equivalentemente
+    $$sg(m)\leq kg(n)\leq (s+1)g(m)$$
+    Como $\log$ también es una función creciente también tenemos
+    $$s\log(m)\leq k\log(n)\leq (s+1)\log(m)$$
+    Por tanto,
+    $$\frac{s}{k}\leq\frac{g(n)}{g(m)}\leq\frac{s+1}{k}\quad\text{y}\quad\frac{s}{k}\leq\frac{\log(n)}{\log(m)}\leq\frac{s+1}{k}$$
+    luego
+    $$\abs{\frac{g(n)}{g(m)}-\frac{\log(n)}{\log(m)}}\leq\frac{1}{k}$$
+    Como $k$ es arbitrario,
+    $$\frac{g(n)}{g(m)}=\frac{\log(n)}{\log(m)}$$
+    es decir,
+    $$\frac{g(n)}{\log(n)}=\frac{g(m)}{\log(m)}=C$$
+    Luego $g(n)=C\log(n)$ para algún número postivo $C$. Por tanto, si elegimos una base $b$ adecuada, tendremos que $g(n)=\log_bn$.
+
+    Supongamos ahora que $\left(p_1,\dots,p_k\right)$ es una distribución de probabilidad formada por números racionales. Poniéndolos con común denominador podemos suponer que $p_i=\dfrac{b_i}{n}$ y, de la propiedad \ref{item:l1-i2} tenemos,
+    \begin{equation*}
+        \begin{split}
+            H(p_1,\dots,p_k) &= H\left(\frac{b_1}{n},\dots,\frac{b_k}{n}\right) = g(n) - \sum_{i=1, b_i\neq 0}^k\frac{b_i}{n}g(b_i) = \log_bn - \sum_{i=1,b_i\neq 0}^k\frac{b_i}{n}\log_bb_i = \\
+            &= \sum_{i=1,b_i\neq 0}^k\frac{b_i}{n}\log_b\frac{n}{b_i}=\sum_{i=1,p_i\neq 0}^kp_i\log_b\frac{1}{p_i}
+        \end{split}
+    \end{equation*}
+    Como $H$ es continua, entonces
+    $$H(p_1,\dots,p_k) = \sum_{i=1,p_i\neq 0}^kp_i\log_b\frac{1}{p_i}$$
+    para toda $k-\text{upla}$ $(p_1,\dots,p_k)$ de números reales en el dominio de $H$.
+\end{proof}
+
+\begin{df}
+    Sea $b$ un número real mayor que $1$. Se llama {\it entropía} en base $b$ de una distribución de probabilidad $P=(p_1,\dots,p_k)$ a
+    $$H_b(p_1,\dots,p_k)=\sum_{i=1}^kp_i\log_b\frac{1}{p_i}$$
+    La entropía de una variable aleatoria discreta es la entropía de su distribución de probabilidad.
+\end{df}
+
+La base $b$ en la que se calcule la función de entropía sólo implica un cambio de escala debido a la igualdad $\log_bx=\log_{b'}x\cdot\log_bb'$ que implica
+$$H_b(X)=H_{b'}(X)\cdot\log_bb'$$
+
+\begin{prop}
+    Sea $(p_1,\dots,p_n,q_1,\dots,q_m)$ una distribución de probabilidad. Si $a=\sum_{i=1}^{n}p_i$, con $0<a<1$ entonces
+    $$H(p_1,\dots,p_n,q_1,\dots,q_m)=H(a, 1-a)+aH\left(\frac{p_1}{a},\dots,\frac{p_n}{a}\right)+(1-a)H\left(\frac{q_1}{1-a},\dots,\frac{q_m}{1-a}\right) $$    
+\end{prop}
+
+\begin{proof}
+    \begin{equation*}
+        \begin{split}
+            H(p_1,\dots,p_n,q_1,\dots,q_m)=& \sum_{i=1}^np_i\log\frac{1}{p_i} + \sum_{i=1}^mq_i\log\frac{1}{q_i} = \sum_{i=1}^np_i\log\frac{a}{ap_i} + \sum_{i=1}^mq_i\log\frac{1-a}{(1-a)q_i} = \\
+            =&\sum_{i=1}^np_i\left(\log\frac{a}{p_i}+\log\frac{1}{a}\right) + \sum_{i=1}^mq_i\left(\log\frac{1-a}{q_i}+\log\frac{1}{1-a}\right) = \\
+            =&\sum_{i=1}^np_i\log\frac{a}{p_i} + \sum_{i=1}^np_i\log\frac{1}{a} + \sum_{i=1}^mq_i\log\frac{1-a}{q_i}+\sum_{i=1}^mq_i\log\frac{1}{1-a}=\\
+            &=a\log\frac{1}{a}+(1-a)\log\frac{1}{1-a} + \sum_{i=1}^np_i\log\frac{a}{p_i} + \sum_{i=1}^mq_i\log\frac{1-a}{q_i} = \\
+            &=H(a,1-a) + a\sum_{i=1}^n\frac{p_i}{a}\log\frac{a}{p_i} + (1-a)\sum_{i=1}^m\frac{q_i}{1-a}\log\frac{1-a}{q_i} = \\
+            &= H(a, 1-a) +aH\left(\frac{p_1}{a},\dots,\frac{p_n}{a}\right) + (1-a)H\left(\frac{q_1}{1-a},\dots,\frac{q_m}{1-a}\right)
+        \end{split}
+    \end{equation*}
+\end{proof}
