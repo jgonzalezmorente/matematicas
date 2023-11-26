@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1700933570 "/Users/prognio/src/matematicas/criptografia/src/main.tex" "main.pdf" "main" 1700933570 0
+["pdflatex"] 1701014510 "/Users/prognio/src/matematicas/criptografia/src/main.tex" "main.pdf" "main" 1701014511 0
   "/Users/prognio/src/matematicas/criptografia/src/main.tex" 1700933293 179 ca0ad24182696297ead0e17a5f899aad ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -118,11 +118,11 @@
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1699791545 7883458 fdb503132b5a1ac18feb7aea3433bfea ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "config.tex" 1700933569 2757 117df6761f14a0fef6c658b9ac423aa4 ""
-  "main.aux" 1700933570 1140 5b0a3fdb14e058495aaee083db101e10 "pdflatex"
-  "main.out" 1700933570 378 adddf7b51beb1a9f2e2f813bfc23b2ad "pdflatex"
+  "main.aux" 1701014511 1222 13bc4e8c4f79af8a6e6e9be50fdf435b "pdflatex"
+  "main.out" 1701014511 378 adddf7b51beb1a9f2e2f813bfc23b2ad "pdflatex"
   "main.tex" 1700933293 179 ca0ad24182696297ead0e17a5f899aad ""
-  "main.toc" 1700933570 200 f3a2095df64f4898b7262cfc0f73d6aa "pdflatex"
-  "simetricos.tex" 1700933336 5415 e28bc534918ccbaf8ea3708272e60513 ""
+  "main.toc" 1701014511 200 f3a2095df64f4898b7262cfc0f73d6aa "pdflatex"
+  "simetricos.tex" 1701014510 7336 28218c6684e7d029a8b519f3e6891bf4 ""
   (generated)
   "main.aux"
   "main.log"

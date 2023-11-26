@@ -1,5 +1,36 @@
 \chapter{Anillos}
 \section{Ideales y anillos cociente}
 
-\begin{teo}[\textbf{Teorema de la Correspondencia}] Si $I$ es un ideal de un anillo $A$, las asignaciones $J\mapsto J/I$ y $X\mapsto\pi^{-1}(X)$
+\begin{teo}[\textbf{Teorema de la Correspondencia}] Si $I$ es un ideal de un anillo $A$, las asignaciones $J\mapsto J/I$ y $X\mapsto\pi^{-1}(X)$ definen aplicaciones biyectivas (una inversa de la otra) que conservan la inclusión entre el conjunto de los ideales de $A$ que contienen al $I$ y el conjunto de los ideales de $A/I$.
 \end{teo}
+
+\begin{proof} \
+    \begin{enumerate}[label=(\arabic*)]
+        \item Si $J$ es un ideal de $A$ que contiene a $I$ entonces $J/I$ es un ideal de $A/I$ y $\pi^{-1}(J/I)=J$.
+        \item Si $X$ es un ideal de $A/I$ entonces $\pi^{-1}(X)$ es un ideal de $A$ que contiene a $I$ y $\pi^{-1}(X)/I=X$.
+        \item Si $J\subseteq K$ son ideales de $A$ que contienen a $I$ entonces entonces $J/I\subseteq K/I$.
+        \item Si $X\subseteq Y$ son ideales de $A/I$ entonces $\pi^{-1}(X)\subseteq\pi^{-1}(Y)$.
+    \end{enumerate}
+\end{proof}
+
+\section{Operaciones con ideales}
+
+Sea $A$ un anillo. Recordemos que $X$ es un subconjunto de $A$ entonces llamamos {\it ideal} de $A$ {\it generado} por $X$ al menor ideal de $A$ que contiene a $X$ y que 
+$$(X) =\left\lbrace \sum_{i=1}^na_ix_i : n\geq 0, a_i\in A, x_i\in X \right\rbrace$$
+Es fácil ver que la intersección de una familia de ideales de $A$ es un ideal de $A$. Eso implica que $(X)$ es también la intersección de todos los ideales de $A$ que contienen a $X$.
+
+Si $I$ y $J$ son dos ideales de $A$ entonces la suma y el producto de $A$ son los conjuntos
+\begin{equation*}
+    \begin{split}
+        I + J &= \left\lbrace x+y : x\in, y\in J \right\rbrace \\
+        IJ    &= \left\lbrace x_1y_1 + \cdots x_ny_n : x_1\cdots,x_n\in I, y_1,\cdots,y_n\in J \right\rbrace
+    \end{split}
+\end{equation*}
+
+Más generalmente, si $I_1,\dots,I_n$ son ideales, entonces la suma de estos ideales es
+$$I_1+\cdots +I_n=\left\lbrace x_1+\cdots+x_n: x_1\in I_1,\dots, x_n\in I_n\right\rbrace$$
+y el producto $I_1\cdots I_n$, es el ideal formado por las sumas de productos de la forma $x_1\cdots x_n$ donde $x_1\in I_1,\dots,x_n\in I_n$.
+
+Aún más general, si $\left\lbrace I_x : x\in X\right\rbrace$ es una familia de ideales de $A$ entonces
+$$\sum_{x\in X}I_x=\left\lbrace \sum_{x\in X}a_x : a_x \in I_x\text{ para todo }x\in X\text{ y }a_x=0\text{ para casi todo }x\in X\right\rbrace$$
+y $\prod_{x\in X}$ es el ideal formado por las sumas de productos de la forma $\prod_{x\in X}a_x$ donde $a_x\in I_x$ para todo $x\in X$ y $a_x=1$ para casi todo $x\in X$.

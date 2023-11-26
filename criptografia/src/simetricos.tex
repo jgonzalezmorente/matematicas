@@ -85,3 +85,43 @@ $$H_b(X)=H_{b'}(X)\cdot\log_bb'$$
         \end{split}
     \end{equation*}
 \end{proof}
+
+Vamos ahora a ver cual es el rango de la función de entropía. Más concretamente vamos a demostrar el siguiente.
+
+\begin{teo}\label{teo:t1}
+    Sea $X$ una variable aleatoria discreta con $n$ sucesos posibles. Entonces
+    $$0\leq H_b(X)\leq\log_bn$$
+    Además $H_b(X)=0$ precisamente si $P(X=x)=1$ para algún suceso $x$ y $H_b(X)=\log_bn$ si y sólo si la distribución de probabilidad de $X$ es uniforme.
+\end{teo}
+
+Para demostrar el Teorema \ref{teo:t1} necesitaremos dos lemas. El primero es bien conocido:
+
+\begin{lem}\label{lem:l1}
+    Para todo número real positivo $x$ se verifica $\log x\leq x-1$ y la igualdad se verifica precisamente si $x=1$.
+\end{lem}
+
+El segundo es un poco más complicado:
+
+\begin{lem}
+    Sea $P=(p_1,\dots,p_n)$ una distribución de probabilidad y $Q=(q_1,\dots,q_n)\in\RR^n$ con $0\leq q_i\leq 1$ y $\sum_{i=1}^nq_i\leq 1$. Entonces
+    $$\sum_{i=1, p_i\neq 0}^np_i\log\frac{1}{p_i}\leq\sum_{i=1, q_i\neq 0}p_i\log\frac{1}{q_i}$$
+    Además la igualdad se verifica precisamente si $p_i=q_i$ para todo $i$.
+\end{lem}
+
+\begin{proof}
+    Del lema \ref{lem:l1} se tiene que si $p\neq 0$ y $q\neq 0$ entonces
+    $$\log\frac{q}{p}\leq\frac{q}{p}-1$$
+    y, por tanto,
+    $$p\log\frac{1}{p}\leq p\log\frac{1}{q} + q - p$$
+    Puesto que $\sum_{i=1}^n q_i\leq 1=\sum_{i=1}^np_i$, se tiene
+    $$\sum_{i=1,p_i\neq 0}^np_i\log\frac{1}{p_i}\leq \sum_{i=1,p_i\neq 0,q_i\neq 0}^n\left(p_i\log\frac{1}{q_i}+q_i-p_i\right)\leq \sum_{i=1,q_i\neq 0}^np_i\log\frac{1}{q_i}$$
+
+    Supongamos que se da la igualdad, esto es, 
+    $$\sum_{i=1, p_i\neq 0}^np_i\log\frac{1}{p_i}=\sum_{i=1, q_i\neq 0}p_i\log\frac{1}{q_i}$$
+    Entonces,
+    $$p_i\log\frac{1}{p_i}=p_i\log\frac{1}{q_i}+q_i-p_i$$
+    para todo $i$ con $p_i\neq 0$ y $q_i\neq 0$, o equivalentemente,
+    $$\log\frac{q_i}{p_i}=\frac{q_i}{p_i}-1$$
+    Pero del lema \ref{lem:l1}, esto equivale a que $p_i=q_i$ para todo $i$.
+
+\end{proof}
