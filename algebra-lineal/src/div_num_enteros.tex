@@ -1,0 +1,27 @@
+\chapter{Divisibilidad en los números enteros}
+\section{División entera. Ideales}
+
+Designaremos por $\ZZ$ el conjunto de los números enteros. La teoría de la divisibilidad en $\ZZ$ es consecuencia de la siguiente importante propiedad.
+
+\begin{teo}[\textbf{de la división entera}]
+    Dados $a,b\in\ZZ$, $b\neq 0$, existen dos únicos números enteros $q$ y $r$ que cumplen $a=bq+r$, $0\leq r<|b|$. Estos números $q$ y $r$ se llaman el cociente y el resto de la división entera de $a$ por $b$.    
+\end{teo}
+
+\begin{ej}
+    $$-8 = 3\cdot (-3) + 1, \quad 3 = (-8)\cdot 0 + 3$$
+\end{ej}
+
+Si el resto de la división entera de $a$ por $b$ es $0$, se dice que $a$ es un {\it múltiplo} de $b$ (escribiremos $a=\overset{\scalebox{1.2}{$\cdot$}}{b}$), que $b$ es un {\it divisor} de $a$ (escribiremos $b\mid a$), o que $a$ es {\it divisible} por $b$. Indicaremos por $(b)$ el conjunto de los múltiplos de $b$. Observemos que $(b)$ cumple las dos propiedades siguientes:
+\begin{itemize}
+    \item es cerrado para la suma; es decir, $a,c\in(b)\Rightarrow a+c\in (b)$.
+    \item si $a\in (b)$ y $c$ es cualquier entero, entonces $ac\in(b)$.
+\end{itemize}
+
+\begin{prop}
+    Si el subconjunto $I\subset\ZZ$ cumple
+    \begin{enumerate}
+        \item $a, b\in I\Rightarrow a + b\in I$
+        \item $a\in I, c\in\ZZ\Rightarrow ac\in I$
+    \end{enumerate}
+    entonces existe un $b\in\ZZ$ tal que $I=(b)$.
+\end{prop}

@@ -1,5 +1,60 @@
 
 \chapter{Criptosistemas simétricos o de clave privada}
+
+\section {Criptografía}
+
+La {\it criptografía} es la ciencia de representar información de forma opaca para que sólo los agentes autorizados (personas o dispositivos diversos) sean capaces de desvelar el mensaje oculto. El proceso de ocultar la información se llama {\it cifrado}, pero a menudo también se llama {\it encriptado} por influencia del inglés. El proceso de desvelarla se llama {\it descifrado} o {\it desencriptado}. El concepto de criptosistema modela los procesos de cifrado y descifrado.
+
+Un {\it criptosistema simétrico}, también llamado {\it de clave privada}, está formado por un conjunto $K$, cuyos elementos llamamos {\it claves} o {\it llaves}, y una regla que asocia dos aplicaciones a cada clave $k\in K$:
+
+$$c_k:M_k\longrightarrow C_k, \quad d_k:C_k\longrightarrow M_k$$
+de forma que 
+$$d_k(c_k(x))=x, \text{ para todo } x\in M_k$$ 
+En la práctica el protocolo criptográfico también incluye un algoritmo generador de claves, es decir, uno que tiene como salida un elemento de $K$, pero nosotros no vamos a tener en cuenta esta parte del criptosistema.
+
+Extendemos las aplicaciones $c_k$ a $M_k^{\infty}=\cup_{n\geq 1}M_k^n$ y $d_k$ a $C_k^{\infty}=\cup_{n\geq 1}C_k^n$ poniendo
+\begin{equation*}
+    \begin{split}
+        c_k(x_1\dots x_n) &= c_k(x_1)\cdots c_k(x_n), \quad x_1,\dots,x_n\in M_k \\
+        d_k(y_1\dots y_n) &= d_k(y_1)\cdots d_k(y_n), \quad y_1,\dots,y_n\in C_k \\
+    \end{split}
+\end{equation*}
+
+Obsérvese que representamos los elementos de $M^n$ como concatenación de elementos de $M$.
+
+Utilizaremos la siguiente terminlogía para una clave $k\in K$:
+
+\begin{itemize}[label=--]
+    \item Elementos de $M_k^\infty$: {\it Mensajes en claro}.
+    \item Elementos de $C_k^\infty$: {\it Mensajes en cifrados o encriptados}.
+    \item Elementos de $c_k$: {\it Función de cifrado o función de encriptado}.
+    \item Elementos de $d_k$: {\it Función de descifrado o función de desencriptado}.
+\end{itemize}
+
+Un mensaje en claro o cifrado diremos que es {\it básico} si tiene longitud $1$. Sin embargo, en muchas situaciones diremos mensajes para referirnos a mensajes básicos, bien en claro o cifrados. 
+
+Frecuentemente $M_k$ es el mismo conjunto para todas las claves y lo mismo ocurre con los $C_k$. En este caso ponemos $M=M_k$ y $C=C_k$.
+
+\begin{ej}\label{ej1} {\it Criptosistemas}.
+    \\
+    Sea $A$ un conjunto finito y denotemos por $S_A$ el conjunto de permutaciones de los elementos de $A$.
+    \begin{enumerate}[label=(\arabic*)]
+        \item {\it Sustitución.} Tomamos como conjunto de claves $K=S_A$, como conjuntos de mensajes básicos $M=C=A$ y como funciones de cifrado y descifrado:
+        $$c_\sigma(x)=\sigma(x)\quad\text{ y }\quad d_\sigma(y)=\sigma^{-1}(y)$$
+        \item {\it Reordenamiento.} Ponemos $K=\cup_{n\geq 2}S_n$, donde $S_n=S_{\{1,\dots,n\}}$. Si la clave $\sigma$ está en $S_n$ entonces ponemos $M_\sigma=C_\sigma=A^n$ y ciframos reordenando las posiciones de los símbolos de los mensajes en claro. Más precisamente:
+        $$c_\sigma(x_1\cdots x_n)=x_{\sigma(1)}\cdots x_{\sigma(n)}\quad\text{ y }\quad d_\sigma(y_1\cdots y_n)=x_{\sigma^{-1}(1)}\cdots x_{\sigma^{-1}(n)}$$
+    \end{enumerate}
+\end{ej}
+
+En la práctica casi todos los protocolos criptográficos son combinaciones de los del ejemplo \ref{ej1}. Sin embargo, en estos criptosistemas no se dice nada sobre las permutaciones elegidas. La naturaleza de estas permutaciones es lo que hace un criptosistema bueno o malo. La bondad de un criptosistema depende de que satisfaga las siguientes condiciones:
+
+\begin{itemize}[label=$\bullet$]
+    \item {\it Rapidez de los cálculos}. Es importante disponer de un algoritmo eficiente (polinomial, con exponente pequeño) para calcular $c_k(x)$ y $d_k(y)$.
+    \item {\it Seguridad}. Debe ser difícil descubrir un valor concreto de $x$ a partir del valor de $c_k(x)$ sin conocer $k$.
+\end{itemize}
+
+Las nociones de ``algoritmo eficiente'', ``difícil de calcular'' y ``tiempo razonable'' son ambiguas. Más adelante daremos conceptos más precisos. De momento, veamos ejemplos concretos.
+
 \section{Entropía}
 
 \begin{teo}

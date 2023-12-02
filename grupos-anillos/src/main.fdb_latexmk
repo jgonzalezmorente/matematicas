@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1700937036 "/Users/prognio/src/matematicas/grupos-anillos/src/main.tex" "main.pdf" "main" 1700937037 0
+["pdflatex"] 1701340747 "/Users/prognio/src/matematicas/grupos-anillos/src/main.tex" "main.pdf" "main" 1701340747 0
   "/Users/prognio/src/matematicas/grupos-anillos/src/main.tex" 1700932829 176 59f2995e6d6341e536d1427397c93781 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -114,12 +114,12 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1699791590 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1699791545 7883458 fdb503132b5a1ac18feb7aea3433bfea ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "anillos.tex" 1700937036 2492 fb87644e3b3e4cf8f65bd0415a052b34 ""
+  "anillos.tex" 1701340746 2973 523c7b8d8e682b1578568bdd54331ab7 ""
   "config.tex" 1700933592 2757 117df6761f14a0fef6c658b9ac423aa4 ""
-  "main.aux" 1700937037 1147 92a39e4ff554d9242336998422cb1fdd "pdflatex"
-  "main.out" 1700937037 446 708d2ffaed44d5c3e6985de896d1f6b3 "pdflatex"
+  "main.aux" 1701340747 1147 92a39e4ff554d9242336998422cb1fdd "pdflatex"
+  "main.out" 1701340747 446 708d2ffaed44d5c3e6985de896d1f6b3 "pdflatex"
   "main.tex" 1700932829 176 59f2995e6d6341e536d1427397c93781 ""
-  "main.toc" 1700937037 262 12a8be2fa34440a8c9be2d4d43ba2325 "pdflatex"
+  "main.toc" 1701340747 262 12a8be2fa34440a8c9be2d4d43ba2325 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
