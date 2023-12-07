@@ -55,6 +55,48 @@ En la práctica casi todos los protocolos criptográficos son combinaciones de l
 
 Las nociones de ``algoritmo eficiente'', ``difícil de calcular'' y ``tiempo razonable'' son ambiguas. Más adelante daremos conceptos más precisos. De momento, veamos ejemplos concretos.
 
+\subsection*{Criptosistema de Cesar}
+
+Vamos a identificar las $27$ letras mayúsculas del alfabeto español asignando a cada una de ellas un número del $0$ al $26$, de forma que estamos identificando los elementos de $A$ con los de $\ZZ_{27}$ usando la siguiente tabla
+
+\begin{equation}
+    \begin{array}{|cccccccccccccc|}\hline
+        A & B & C & D & E & F & G & H & I & J & K  & L  & M  & N \\
+        0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 0 & 10 & 11 & 12 & 13 \\ \hline
+        \text{\it Ñ} & O  & P  & Q  & R  & S  & T  & U  & V  & W  & X  & Y  & Z & \\
+                  14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & \\ \hline
+    \end{array}
+\end{equation}
+\\
+Ponemos $K=M=C=\ZZ_{27}$ y 
+\begin{equation*}
+    \begin{split}
+        c_k(x) &= ( x + k \mod 27 ) \\
+        d_k(x) &= ( x - k \mod 27 )
+    \end{split}
+\end{equation*}
+
+Por ejemplo, supongamos que la clave es la letra \textit{W}, que corresponde con el número $23$ y que queremos cifrar el mensaje ``ésta es la primera vez que vamos a cifrar un mensaje''. En primer lugar obsérvese que nuestro alfabeto sólo contiene letras mayúsculas sin acentuar, con lo que el mensaje a cifrar es:
+
+\begin{center}
+    ESTAESLAPRIMERAVEZQUEVAMOSACIFRARUNMENSAJE
+\end{center}
+
+Ahora tenemos que convertir el mensaje en una lista de números de acuerdo a la tabla anterior:
+\begin{gather*}
+    4, 19, 20, 0, 4, 19, 11, 0, 16, 18, 8, 12, 4, 18, 0, 22, 4, 26, 17, 21, \\ 4, 22, 0, 12, 15, 19, 0, 2, 8, 5, 18, 0, 18, 21, 13, 12, 4, 13, 19, 0, 9, 4
+\end{gather*}
+
+Después tenemos que sumar a cada uno de estos números la clave, es decir, sumamos $23$ módulo $27$, o lo que es lo mismo restamos $4$ módulo $27$.
+\begin{gather*}
+    0, 15, 16, 23, 0, 15, 7, 23, 12, 14, 4, 8, 0, 14, 23, 18, 0, 22, 13, 17, \\ 0, 18, 23, 8, 11, 15, 23, 25, 4, 1, 14, 23, 14, 17, 9, 8, 0, 9, 15, 23, 5, 0
+\end{gather*}
+
+Finalmente tenemos que sustituir los números por las letras correspondientes y obtendremos el mensaje cifrado.
+
+\begin{center}
+    AOPWAOHWMÑEIAÑWRAVNQARWILOWYEBÑWÑQJIAJOWFA
+\end{center}
 \section{Entropía}
 
 \begin{teo}

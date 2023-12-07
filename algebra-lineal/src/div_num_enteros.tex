@@ -3,7 +3,7 @@
 
 Designaremos por $\ZZ$ el conjunto de los números enteros. La teoría de la divisibilidad en $\ZZ$ es consecuencia de la siguiente importante propiedad.
 
-\begin{teo}[\textbf{de la división entera}]
+\begin{teo}[\textbf{de la división entera}]\label{teo:1}
     Dados $a,b\in\ZZ$, $b\neq 0$, existen dos únicos números enteros $q$ y $r$ que cumplen $a=bq+r$, $0\leq r<|b|$. Estos números $q$ y $r$ se llaman el cociente y el resto de la división entera de $a$ por $b$.    
 \end{teo}
 
@@ -12,16 +12,32 @@ Designaremos por $\ZZ$ el conjunto de los números enteros. La teoría de la div
 \end{ej}
 
 Si el resto de la división entera de $a$ por $b$ es $0$, se dice que $a$ es un {\it múltiplo} de $b$ (escribiremos $a=\overset{\scalebox{1.2}{$\cdot$}}{b}$), que $b$ es un {\it divisor} de $a$ (escribiremos $b\mid a$), o que $a$ es {\it divisible} por $b$. Indicaremos por $(b)$ el conjunto de los múltiplos de $b$. Observemos que $(b)$ cumple las dos propiedades siguientes:
+
 \begin{itemize}
     \item es cerrado para la suma; es decir, $a,c\in(b)\Rightarrow a+c\in (b)$.
     \item si $a\in (b)$ y $c$ es cualquier entero, entonces $ac\in(b)$.
 \end{itemize}
 
-\begin{prop}
+\begin{prop}\label{prop:1}
     Si el subconjunto $I\subset\ZZ$ cumple
-    \begin{enumerate}
-        \item $a, b\in I\Rightarrow a + b\in I$
-        \item $a\in I, c\in\ZZ\Rightarrow ac\in I$
+    \begin{enumerate}[label=(\arabic*)]
+        \item\label{en1:it1} $a, b\in I\Rightarrow a + b\in I$
+        \item\label{en1:it2} $a\in I, c\in\ZZ\Rightarrow ac\in I$
     \end{enumerate}
     entonces existe un $b\in\ZZ$ tal que $I=(b)$.
 \end{prop}
+
+\begin{proof}
+    Si $I=\{0\}$, entonces $I=(0)$. Si $I$ contiene un elemento no nulo $a$, también contiene $-a=a\cdot(-1)$, y o bien $a$ o bien $-a$ es positivo. Por tanto, $I$ contiene enteros positivos. Sea $b$ el menor de los enteros positivos contenidos en $I$. Por \ref{en1:it2}, $I$ contiene todos los múltiplos de $b$: $(b)\subset I$. Vamos a ver que $I\subset (b)$, y por tanto, $I=(b)$. En efecto, dado $a\in I$ cualquiera, por el teorema \ref{teo:1},
+    $$a=bq+r, \quad 0\leq r<|b|=b$$
+    Por \ref{en1:it1} y \ref{en1:it2}, $r=a-bq=a+b(-q)\in I$; pero $0\leq r<|b|=b$ y $b$ es el menor de los enteros positivos de $I$; así pues, $r=0$, y por tanto $a=bq\in (b)$.
+\end{proof}
+
+Un subconjunto $I$ que cumple las condiciones \ref{en1:it1} y \ref{en1:it2} de la proposición \ref{prop:1} se llama un {\it ideal} de $\ZZ$. El elemento $b$ tal que $I=(b)$ se denomina {\it base} del ideal.
+
+\begin{ejer}
+    Demostrar que,
+    $$(b)=(c)\text{ si y sólo si }c=\pm b$$
+\end{ejer}
+
+Obsérvese que $(a)\subset (b)$ si y sólo si $b\mid a$. Las cuestiones de divisibilidad equivalen, por tanto, a cuestiones sobre inclusiones entre ideales.

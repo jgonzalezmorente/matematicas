@@ -33,12 +33,35 @@ y el producto $I_1\cdots I_n$, es el ideal formado por las sumas de productos de
 
 Aún más general, si $\left\lbrace I_x : x\in X\right\rbrace$ es una familia de ideales de $A$ entonces
 $$\sum_{x\in X}I_x=\left\lbrace \sum_{x\in X}a_x : a_x \in I_x\text{ para todo }x\in X\text{ y }a_x=0\text{ para casi todo }x\in X\right\rbrace$$
-y $\prod_{x\in X}$ es el ideal formado por las sumas de productos de la forma $\prod_{x\in X}a_x$ donde $a_x\in I_x$ para todo $x\in X$ y $a_x=1$ para casi todo $x\in X$.
+y $\prod_{x\in X}I_x$ es el ideal formado por las sumas de productos de la forma $\prod_{x\in X}a_x$ donde $a_x\in I_x$ para todo $x\in X$ y $a_x=1$ para casi todo $x\in X$.
 
 \begin{prop}
-    Si $\{I_x: x\in X\}$ es una familiade ideales de un anillo $A$ entonces:
+    Si $\{I_x: x\in X\}$ es una familia de ideales de un anillo $A$ entonces:
     \begin{enumerate}[label=(\arabic*)]
         \item $\sum_{x\in X}I_x$ es el menor ideal de $A$ que contiene a todos los $I_x$, o sea el ideal generado por $\cup_{x\in X}I_x$.
         \item Si $I_1,\dots,I_n$ son ideales de $A$ entonces $I_1\cdots I_n$ es el menor ideal de $A$ generado por los productos $x_1\cdots x_n$ con $x_1\in I_1,\dots, x_n\in I_n$.
     \end{enumerate}
 \end{prop}
+
+\begin{ej}{\it Operaciones con ideales}
+    \begin{enumerate}[label=(\arabic*)]
+        \item Sean $n$ y $m$ dos números enteros y consideremos los ideales $(n)$ y $(m)$ de $\ZZ$. Claramente $(n)(m)=(nm)$. Por otro lado, $(n)\cap(m)$ está formado por los números enteros que son múltiplos de $n$ y $m$. Esos son precisamente los múltiplos del mínimo común múltiplo de $n$ y de $m$. Finalmente, $(n)+(m)$ es el menor ideal $(d)$ de $\ZZ$ que contiene a $(n)$ y $(m)$, $(d)=(n)+(m)$ si y solo si $d$ divide a $n$ y a $m$ y es múltiplo de todos los divisores comunes de $n$ y $m$. O sea, $d$ es el máximo común divisor de $n$ y $m$. En resumen:
+        $$(n)(m)=(nm), \quad (n)\cap(m)=(\mcm{n,m}), \quad (n)+(m)=(\mcd{n,m})$$
+
+        \item Consideremos ahora el anillo $\ZZ[X]$ de los polinomios con coeficientes enteros. Entonces $(2) + (X)$ está formado por los polinomios cuyo término independiente es par. Vamos a ver que este ideal no es principal. Supongamos por reducción al absurdo que $(2)+(X)=(a)$ para algún $a\in\ZZ[X]$. Entonces $2=ab$ para algún polinomio $b$, lo que que implica que $a\in\ZZ$. Además, como $a\in (2, X)$, necesariamente $a$ es par, lo que implica $X \notin (a)=(2)+(X)$, una contradicción.
+    \end{enumerate}
+\end{ej}
+
+\section{ Los Teoreamas de Isomorfía y Chino de los Restos}
+
+\begin{teo}[\textbf{Primer Teorema de Isomorfía}]
+    Sea $f:A\longrightarrow B$ un homomorfismo de anillos. Entonces existe un único isomorfismo de anillos $\overline{f}: A/\Ker f\longrightarrow \Im f$
+
+    $$\xymatrix@C=1.5cm@R=1cm{ 
+        A \ar[r]^f\ar[d]_p                     & B \\ 
+        A/\Ker f \ar@{-->}[r]^{\overline{f}}  & \Im f\ar[u]_i 
+    }$$
+    
+    es decir, $i\circ \overline{f} \circ p=f$, donde $i$ es la inclusión y $p$ es la proyección. En particular,
+    $$ A/\Ker f\simeq \Im f$$
+\end{teo}
