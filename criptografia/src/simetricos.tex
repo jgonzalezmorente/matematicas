@@ -55,7 +55,7 @@ En la práctica casi todos los protocolos criptográficos son combinaciones de l
 
 Las nociones de ``algoritmo eficiente'', ``difícil de calcular'' y ``tiempo razonable'' son ambiguas. Más adelante daremos conceptos más precisos. De momento, veamos ejemplos concretos.
 
-\subsection*{Criptosistema de Cesar}
+\subsection*{Criptosistema de César}
 
 Vamos a identificar las $27$ letras mayúsculas del alfabeto español asignando a cada una de ellas un número del $0$ al $26$, de forma que estamos identificando los elementos de $A$ con los de $\ZZ_{27}$ usando la siguiente tabla
 
@@ -97,6 +97,37 @@ Finalmente tenemos que sustituir los números por las letras correspondientes y 
 \begin{center}
     AOPWAOHWMÑEIAÑWRAVNQARWILOWYEBÑWÑQJIAJOWFA
 \end{center}
+
+\subsection*{Criptosistema de Vigenère}
+
+Es similar al de César con el alfabeto español identificado con $\ZZ_{27}$, pero $K=\ZZ_{27}^\infty$ y si $k\in\ZZ_{27}^d$ entonces $M_k=C_k=\ZZ_{27}^d$ y
+\begin{equation*}
+    \begin{split}
+        c_{k_1\cdots k_d}(x_1\cdots x_d) &= [x_1 + k_1]_{27}\cdots [x_d + x_k]_{27} \\
+        d_{k_1\cdots k_d}(y_1\cdots y_d) &= [y_1 - k_1]_{27}\cdots [y_d - y_k]_{27} \\
+    \end{split}
+\end{equation*}
+Es decir se divide el mensaje en bloques de longitud $d$ y se trabaja como en el Criptosistema de César usando la clave $k_i$ para los símbolos en posiciones con $j\equiv i \mod d$.
+
+En realidad el criptosistema de César y Vigenére se pueden considerar como casos particulares de otros más generales. Simplemente hemos restringido la presentación a $27$ símbolos para hacer más simple la explicación. Sin embargo el conjunto de símbolos puede ser cualquiera (letras mayúsculas y minúsculas, comas, espacios, etc), y podemos siempre identificar el conjunto de símbolos con $\ZZ_n$ donde $n$ es el cardinal del conjunto de símbolos. De esta forma podemos obtener versiones del Criptosistema de César y del de Vigenère con un conjunto mayor de símbolos. Por otro lado, se puede cambiar $\ZZ_n$ por cualquier otro grupo sin que cambie de forma esencial la naturaleza de estos dos criptosistemas. Nos referiremos a este grupo como plataforma. Por ejemplo, en lugar de identificar los símbolos del alfabeto con los elementos de $\ZZ_n$ los podemos identificar con los elementos de un grupo finito y utilizar la operación del grupo para hacer las operaciones. No es esencial que la aplicación que asocia a un símbolo un elmenento del grupo plataforma sea sobreyectiva, aunque si que es necesario que sea inyectiva.
+
+Por otro lado, los símbolos pueden no ser elementos de un alfabeto natural sino combinaciones de varios símbolos. Es decir, podemos elegir una cierta longitud, pongamos $n$, e identificar listas de $n$ símbolos en nuestro alfabeto, con el grupo aditivo $\ZZ_{b^n}$, donde $b$ es el cardinal del alfabeto. Por ejemplo, supongamos que utilizamos el mismo alfabeto de antes, es decir, las letras mayúsculas del alfabeto en español y que las queremos agrupar en bloques de longitud cuatro. Entonces podemos identificar estas sucesiones con los elementos de $\ZZ_{27^4}$ mediante la siguiente regla:
+$$AAAA=0, AAAB=1, \dots, AAAZ=26,AABA=27,AABB=28,\dots,ZZZZ=27^4-1$$
+
+Obsérvese que el bloque $X_1X_2X_3X_4$ se identificará con 
+$$x_1\cdot 27^3+x_2\cdot 27^2+x_3\cdot 27+x_4\cdot 27^0$$
+donde $x_i$ es el número identificado con la letra $X_i$. Por ejemplo, ``MESA'' se identificaría con
+$$12\cdot 27^3+4\cdot 27^2+19\cdot 27+0\cdot 27^0=239625$$
+
+De esta forma $M=C=\ZZ_{27^4}$ y podríamos utilizar cualquiera de los criptosistemas anteriores de forma similar.
+
+En resumen, podemos establecer diferentes formas de asociar los mensajes básicos con los elementos de un grupo $G$. Todo esto no tiene ninguna naturaleza criptográfica, es simplemente la codificación de la información, de forma que podemos identificar el grupo plataforma $G$ con los tres conjuntos fundamentales del protocolo criptográfico: $K\equiv M\equiv C\equiv G$. Lo que tiene la naturaleza criptográfica son las funciones de cifrado y descifrado, que en este caso toma la forma,
+$$c_k(x)=kx, \quad\text{y}\quad d_k(y)=k^{-1}y$$
+Otra cosa importante, es que la naturaleza del grupo plataforma no es indiferente, pues para que podamos considerar el criptosistema como tal, necesitamos disponer de algoritmos eficientes para calcular las funciones de cifrado y descifrado y queremos que, sin el conocimiento de la clave sea difícil descifrar. Así por ejemplo $(\ZZ_n,+)$, $(\ZZ^*_n,\cdot)$ y los grupos aditivo y multiplicativo de un cuerpo finito o el grupo aditivo de un espacio vectorial sobre un cuerpo finito cumplen la primera condición pues la aritmética en estos grupos es sencilla.
+
+Veamos un último ejemplo de criptosistema sencillo.
+
+
 \section{Entropía}
 
 \begin{teo}
