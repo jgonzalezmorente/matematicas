@@ -41,3 +41,42 @@ Un subconjunto $I$ que cumple las condiciones \ref{en1:it1} y \ref{en1:it2} de l
 \end{ejer}
 
 Obsérvese que $(a)\subset (b)$ si y sólo si $b\mid a$. Las cuestiones de divisibilidad equivalen, por tanto, a cuestiones sobre inclusiones entre ideales.
+
+\section{Mínimo común múltiplo y máximo común divisor}
+
+Dados números enteros $a_1,\dots,a_n$, la intersección $(a_1)\cap\cdots\cap(a_n)$ es el conjunto de los números enteros múltiplos comunes de todos ellos de todos ellos. Este conjunto cumple las dos condiciones de la proposición \ref{prop:1}, y por tanto, $(a_1)\cap\cdots\cap(a_n)=(m)$ para un $m$ conveniente. Este $m$ está carecterizado por las dos propiedades siguientes:
+
+\begin{itemize}
+    \item $m$ es múltiplo común de $a_1,\dots,a_n$
+    \item cualquier otro múltiplo común de $a_1,\dots,a_n$ es múltiplo de $m$.
+\end{itemize}
+
+Diremos que $m$ es el {\it mínimo común múltiplo} de $a_1,\dots,a_n$ y escribiremos
+$$m=\mcm{a_1,\dots,a_n}$$
+
+Observemos que también $-m$ es mínimo común múltiplo de $a_1,\dots,a_n$.
+
+Consideremos ahora la unión $(a_1)\cup\cdots(a_n)$. Este conjunto, en general, no cumple las condiciones de la proposición \ref{prop:1}. Por ejemplo, $(2)\cup (3)$ no contiene el $5=2+3$. Formemos a partir de $(a_1)\cup\cdots\cup (a_n)$ un subconjunto $I$ de $\ZZ$ que cumpla las condiciones de la proposición \ref{prop:1}, Por la condición \ref{en1:it1}, $I$ debe contener todas las sumas de múltiplos de $a_1,\dots,a_n$: $a_1c_1+\cdots+a_nc_n$. No hace falta ampliar más, el conjunto
+$$I=\set{a_1c_1 + \cdots + a_nc_n \ | \ c_1,\dots,c_n\in\ZZ }$$
+cumple ya las condiciones de la proposición \ref{prop:1}, y por tanto, existe un entero $d$ tal que $I=(d)$. Denotaremos $I$ por $(a_1,\dots,a_n)$. Así pues, $I=(a_1,\dots,a_n)=(d)$. Este número $d$ está caracterizado por las dos propiedades siguientes:
+\begin{itemize}
+    \item $d$ es divisor común de $a_1,\dots,a_n$, ya que ello equivale a a firmar que $a_i\in (d)$ para $i=1,\dots,n$. ($a_i=a_1\cdot 0 + \cdots + a_i\cdot 1 + \cdots a_n\cdot 0 \in I$).
+    \item Cualquier otro divisor $d'$ común a $a_1,\dots,a_n$ divide a $d$. En efecto, que $d'$ sea divisor de $a_1,\dots,a_n$ significa que $a_i\in (d')$, $i=1,\dots,n$. Por tanto, $\set{a_1c_1+\cdots a_nc_n \ | \ c_i\in\ZZ}\subset (d')$, es decir, $(d)\subset (d')$, lo cual implica que $d'$ es un divisor de $d$.
+\end{itemize}
+El recíproco también es cierto.
+
+Diremos que $d$ es el {\it máximo común divisor} de $a_1,\dots,a_n$ y escribiremos
+$$d=\mcd{a_1,\dots,a_n}$$
+
+También $-d$ es máximo común divisor.
+
+Observemos que el máximo común divisor $d$ es una suma de múltiplos de $a_1,\dots,a_n$
+$$d=a_1r_1+\cdots+a_nr_n$$
+Esta expresión es conocida como {\it identidad de Bézout}.
+
+Acabaremos este apartado con un método práctico de cálculo del máximo común divisor y de la identidad de Bézout. El método se basa en el siguiente resultado:
+
+\begin{prop}
+    Sea $a=bq+r$ la división entera de $a$ por $b$. Entonces,
+    $$\mcd{a,b}=\mcd{b,r}$$
+\end{prop}

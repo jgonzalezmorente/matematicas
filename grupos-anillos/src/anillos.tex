@@ -65,3 +65,9 @@ y $\prod_{x\in X}I_x$ es el ideal formado por las sumas de productos de la forma
     es decir, $i\circ \overline{f} \circ p=f$, donde $i$ es la inclusión y $p$ es la proyección. En particular,
     $$ A/\Ker f\simeq \Im f$$
 \end{teo}
+
+\begin{proof}
+    Sean $K$ e $I=\Im f$. La aplicación $\overline{f}: A/K\longrightarrow I$ dada por $\overline{f}(x+K)=f(x)$ está bien definida (no depende de representantes) pues si $x+K=y+K$ entonces $x-y\in K$ y por lo tanto $f(x)-f(y)=f(x-y)=0$, es decir, $f(x)=f(y)$. Además es elemental ver que es un homomorfismo de anillos y que es suprayectiva. Para ver que es inyectiva, veamos que su nucleo es nulo. Si $x+K$ está en el núcleo de $\overline{f}$ entonces $0=\overline{f}(x+K)=f(x)$, de modo que $x\in K$ y así $x+K=0+K$. Es decir $\Ker\overline{f}=0$ y por lo tanto $f$ es inyectiva. En conclusión, $\overline{f}$ es un isomorfismo, y hace conmutativo el diagrama porque, para cada $x\in A$, se tiene
+    $$i\left(\overline{f}\left(p(x)\right)\right)=\overline{f}(x+K)=f(x)$$
+    En cuanto a la unicidad, supongamos que otro homomorfismo $\widehat{f}:A/K\longrightarrow I$ verifica que $i\circ \widehat{f} \circ p=f$; entonces para cada $x\in A$ se tiene $\widehat{f}(x+K)=i(\widehat{f}(p(x)))=f(x)=\overline{f}(x+K)$, y por lo tanto $\widehat{f}=\overline{f}$.
+\end{proof}
