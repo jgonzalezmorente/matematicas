@@ -59,14 +59,14 @@ Las nociones de ``algoritmo eficiente'', ``difícil de calcular'' y ``tiempo raz
 
 Vamos a identificar las $27$ letras mayúsculas del alfabeto español asignando a cada una de ellas un número del $0$ al $26$, de forma que estamos identificando los elementos de $A$ con los de $\ZZ_{27}$ usando la siguiente tabla
 
-\begin{equation}
+\begin{equation*}
     \begin{array}{|cccccccccccccc|}\hline
         A & B & C & D & E & F & G & H & I & J & K  & L  & M  & N \\
         0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 0 & 10 & 11 & 12 & 13 \\ \hline
         \text{\it Ñ} & O  & P  & Q  & R  & S  & T  & U  & V  & W  & X  & Y  & Z & \\
                   14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & \\ \hline
     \end{array}
-\end{equation}
+\end{equation*}
 \\
 Ponemos $K=M=C=\ZZ_{27}$ y 
 \begin{equation*}
@@ -126,6 +126,63 @@ $$c_k(x)=kx, \quad\text{y}\quad d_k(y)=k^{-1}y$$
 Otra cosa importante, es que la naturaleza del grupo plataforma no es indiferente, pues para que podamos considerar el criptosistema como tal, necesitamos disponer de algoritmos eficientes para calcular las funciones de cifrado y descifrado y queremos que, sin el conocimiento de la clave sea difícil descifrar. Así por ejemplo $(\ZZ_n,+)$, $(\ZZ^*_n,\cdot)$ y los grupos aditivo y multiplicativo de un cuerpo finito o el grupo aditivo de un espacio vectorial sobre un cuerpo finito cumplen la primera condición pues la aritmética en estos grupos es sencilla.
 
 Veamos un último ejemplo de criptosistema sencillo.
+
+\subsection*{Criptosistemas afines}
+
+Sea $n$ un entero positivo y pongamos $M = C = \ZZ_n$ y $K = \ZZ_n^*\times\ZZ_n$, donde $\ZZ_n^*$ representa el conjunto de elementos invertibles de $\ZZ_n$, es decir, los números naturales menores que $n$ y coprimos con $n$. Las funciones de cifrado y descifrado son
+\begin{equation*}
+    \begin{split}
+        c_{(a,b)}(x) & = ( ax + b \mod n ) \\
+        d_{(a,b)}(x) & = ( a^{-1}(x - b) \mod n )
+    \end{split}
+\end{equation*}
+donde $a^{-1}$ representa el inverso de $a$ en $\ZZ_n$.
+
+Más generalmente, si $R$ es un anillo y $R^*$ denota el grupo de las unidades de $R$, podemos poner $K=R^*\times R$, $M = C = R$ y utilizar las mismas funciones de cifrado y descifrado: $c_{(a,b)}(x) = ax + b$ y $d_{(a,b)}(x) = a^{-1}(x - b)$, con operaciones en el anillo plataforma $R$.
+
+Otra alternativa es tomar $K=\GL_d(R)\times R^d$, donde $\GL_d(R)$ denota el conjunto de las matrices invertibles $d\times d$ con entradas en $R$. Entonces, usando multiplicación matricial el criptosistema afín viene dado por
+\begin{equation*}
+    \begin{split}
+        c_{(A, b)} & = Ax+b \\
+        d_{(A, b)} & = A^{-1}(x-b) \\
+    \end{split}
+\end{equation*}
+
+Más generalmente, se puede fijar como conjunto de mensajes básicos, un $R-\text{módulo}$ $M=C$ y elegir como conjunto de claves $K=\Aut(M)\times M$, donde $\Aut(M)$ es el grupo de los automorfismos de $M$, y como funciones de cifrado y descifrado $c_{(f,b)}(x)=f(x)+b$ y $d_{(f,b)}(y)=f^{-1}(y-b)$. En este caso la plataforma está formada por un anillo y un módulo y, de nuevo, las naturalezas algebraicas de las plataformas son importantes.
+
+Cerramos esta sección con un esquema sencillo del proceso criptográfico:
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[draw, rectangle, inner sep=3mm] (humano) {Mensaje humano};
+        \node[draw, rectangle, inner sep=3mm, right=3cm of humano] (claro) {Mensaje en claro};
+        \node[draw, rectangle, inner sep=3mm, right=2.5cm of claro] (cifrado) {Mensaje cifrado};
+    
+        \draw[->, shorten >=1mm, shorten <=1mm] ([yshift=1mm]humano.east) -- ([yshift=1mm]claro.west) node[midway, above] {Codificación};
+        \draw[->, shorten >=1mm, shorten <=1mm] ([yshift=-1mm]claro.west) -- ([yshift=-1mm]humano.east) node[midway, below] {Decodificación};
+
+        \draw[->, shorten >=1mm, shorten <=1mm] ([yshift=1mm]claro.east) -- ([yshift=1mm]cifrado.west) node[midway, above] {Cifrado};
+        \draw[->, shorten >=1mm, shorten <=1mm] ([yshift=-1mm]cifrado.west) -- ([yshift=-1mm]claro.east) node[midway, below] {Descifrado};
+        
+        \path (current bounding box.north) ++(0,0.3cm);
+        \path (current bounding box.south) ++(0,-0.3cm);
+    \end{tikzpicture}
+\end{center}
+
+En el proceso de codificación, transformamos un texto en símbolos que puedan ser procesados por algoritmos. Por ejemplo, en el Criptosistema de César los mensajes humanos son las letras de un alfabeto que las codificamos convirtiéndolas en números.
+
+$$\begin{array}[pos]{|ccccc|}
+    \hline
+           & \text{Codificación}  &        & \text{Clave}=3 &        \\
+    A      & \longmapsto          & 0      & \longmapsto    & 3      \\
+    B      & \longmapsto          & 1      & \longmapsto    & 4      \\
+    \vdots & \longmapsto          & \vdots & \longmapsto    & \vdots \\
+    W      & \longmapsto          & 23     & \longmapsto    & 26     \\
+    X      & \longmapsto          & 24     & \longmapsto    & 0      \\
+    Y      & \longmapsto          & 0      & \longmapsto    & 1      \\
+    Z      & \longmapsto          & 0      & \longmapsto    & 2      \\
+    \hline
+\end{array}$$
 
 
 \section{Entropía}
