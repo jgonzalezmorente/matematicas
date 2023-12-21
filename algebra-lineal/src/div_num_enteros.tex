@@ -80,3 +80,23 @@ Acabaremos este apartado con un método práctico de cálculo del máximo común
     Sea $a=bq+r$ la división entera de $a$ por $b$. Entonces,
     $$\mcd{a,b}=\mcd{b,r}$$
 \end{prop}
+
+\begin{proof}
+    El resultado es consecuencia de que $(a,b)=(b,r)$. En efecto, todo elemento $ac_1+bc_2\in (a,b)$, satisface $ac_1+bc_2=b(qc_1+c_2)+rc_1\in (b,r)$ y, recíprocamente, todo elemento $bn_1+rn_2\in(b,r)$ satisface $bn_1+rn_2=an_2+b(n_1-qn_2)\in (a,b)$.
+\end{proof}
+
+Si aplicamos reiteradamente esta proposición, obtenemos
+$$\begin{array}{lll}
+    a = bq + r,       & (a,b)=(b,r),       & r<|b|   \\
+    b = rq_1 + r_1,   & (b,r)=(r,r_1),     & r_1<r   \\
+    r = r_1q_2 + r_2, & (r,r_1)=(r_1,r_2), & r_2<r_1
+\end{array}$$
+
+Los sucesivos restos van disminuyendo y obtendremos, por tanto, en un momento dado resto cero:
+$$\begin{array}{lll}
+    r_{k-2} = r_{k-1}q_k + r_k, & (r_{k-2},r_{k-1})=(r_{k-1},r_k),  & r_k<r_{k-1}   \\
+    r_{k-1} = r_kq_{k+1} + 0,   & (r_{k-1},r_k)=(r_k,0)=(r_k)       & 
+\end{array}$$
+Así pues, $(a,b)=(r_k)$, es decir, $r_k=\mcd(a,b)$.
+
+Este método para hallar el máximo común divisor se llama {\it algoritmo de Euclides}.
