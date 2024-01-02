@@ -1,5 +1,6 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\numberline {1}Anillos}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Ideales y anillos cociente}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Operaciones con ideales}{1}{section.1.2}%
-\contentsline {section}{\numberline {1.3} Los Teoreamas de Isomorfía y Chino de los Restos}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.1}Operaciones binarias}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Ideales y anillos cociente}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Operaciones con ideales}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4} Los Teoreamas de Isomorfía y Chino de los Restos}{3}{section.1.4}%

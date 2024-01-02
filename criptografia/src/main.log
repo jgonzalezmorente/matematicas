@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  19 DEC 2023 13:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  2 JAN 2024 20:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -586,18 +586,21 @@ LaTeX Info: Redefining \% on input line 124.
 LaTeX Info: Redefining \. on input line 173.
 LaTeX Info: Redefining \% on input line 173.
  [4]
-LaTeX Info: Redefining \. on input line 222.
-LaTeX Info: Redefining \% on input line 222.
+LaTeX Info: Redefining \. on input line 217.
+LaTeX Info: Redefining \% on input line 217.
  [5]
-LaTeX Info: Redefining \. on input line 254.
-LaTeX Info: Redefining \% on input line 254.
+LaTeX Info: Redefining \. on input line 252.
+LaTeX Info: Redefining \% on input line 252.
  [6]
-LaTeX Info: Redefining \. on input line 300.
-LaTeX Info: Redefining \% on input line 300.
- [7])
+LaTeX Info: Redefining \. on input line 288.
+LaTeX Info: Redefining \% on input line 288.
+ [7]
+LaTeX Info: Redefining \. on input line 330.
+LaTeX Info: Redefining \% on input line 330.
+ [8])
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
- [8] (./main.aux
+ [9] (./main.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
@@ -605,18 +608,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 98A3CCB60E6CD334F15914246321CF50;495.
  ) 
 Here is how much of TeX's memory you used:
- 24067 strings out of 476025
- 468502 string characters out of 5790016
- 1877388 words of memory out of 5000000
- 44093 multiletter control sequences out of 15000+600000
+ 24071 strings out of 476025
+ 468550 string characters out of 5790016
+ 1879388 words of memory out of 5000000
+ 44094 multiletter control sequences out of 15000+600000
  528189 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,20n,123p,1248b,697s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,20n,123p,1443b,701s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (9 pages, 275419 bytes).
+Output written on main.pdf (10 pages, 279302 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 138 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
+ 197 PDF objects out of 1000 (max. 8388607)
+ 145 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
  37 words of extra memory for PDF output out of 10000 (max. 10000000)
 

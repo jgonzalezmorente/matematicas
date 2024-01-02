@@ -59,14 +59,14 @@ Las nociones de ``algoritmo eficiente'', ``difícil de calcular'' y ``tiempo raz
 
 Vamos a identificar las $27$ letras mayúsculas del alfabeto español asignando a cada una de ellas un número del $0$ al $26$, de forma que estamos identificando los elementos de $A$ con los de $\ZZ_{27}$ usando la siguiente tabla
 
-\begin{equation*}
+\begin{equation}\label{equation:eq1}
     \begin{array}{|cccccccccccccc|}\hline
         A & B & C & D & E & F & G & H & I & J & K  & L  & M  & N \\
         0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 0 & 10 & 11 & 12 & 13 \\ \hline
         \text{\it Ñ} & O  & P  & Q  & R  & S  & T  & U  & V  & W  & X  & Y  & Z & \\
                   14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & \\ \hline
     \end{array}
-\end{equation*}
+\end{equation}
 \\
 Ponemos $K=M=C=\ZZ_{27}$ y 
 \begin{equation*}
@@ -171,19 +171,49 @@ Cerramos esta sección con un esquema sencillo del proceso criptográfico:
 
 En el proceso de codificación, transformamos un texto en símbolos que puedan ser procesados por algoritmos. Por ejemplo, en el Criptosistema de César los mensajes humanos son las letras de un alfabeto que las codificamos convirtiéndolas en números.
 
+\begin{equation}
+    \begin{array}[pos]{|ccccc|}
+        \hline
+            & \text{Codificación}  &        & \text{Clave}=3 &        \\
+        A      & \longmapsto          & 0      & \longmapsto    & 3      \\
+        B      & \longmapsto          & 1      & \longmapsto    & 4      \\
+        \vdots & \longmapsto          & \vdots & \longmapsto    & \vdots \\
+        W      & \longmapsto          & 23     & \longmapsto    & 26     \\
+        X      & \longmapsto          & 24     & \longmapsto    & 0      \\
+        Y      & \longmapsto          & 25     & \longmapsto    & 1      \\
+        Z      & \longmapsto          & 26     & \longmapsto    & 2      \\
+        \hline
+    \end{array}
+\end{equation}
+
+También podríamos hacer bloques de una longitud determinada, por ejemplo $4$, y convertirlas en números considerando los símbolos del alfabeto original como los guarismos de un sistema de numeración, con lo que las palabras de una determinada longitud se interpretan como números de esa longitud en base $b$, donde $b$ es el número de símbolos del alfabeto.
+
 $$\begin{array}[pos]{|ccccc|}
     \hline
-           & \text{Codificación}  &        & \text{Clave}=3 &        \\
-    A      & \longmapsto          & 0      & \longmapsto    & 3      \\
-    B      & \longmapsto          & 1      & \longmapsto    & 4      \\
-    \vdots & \longmapsto          & \vdots & \longmapsto    & \vdots \\
-    W      & \longmapsto          & 23     & \longmapsto    & 26     \\
-    X      & \longmapsto          & 24     & \longmapsto    & 0      \\
-    Y      & \longmapsto          & 0      & \longmapsto    & 1      \\
-    Z      & \longmapsto          & 0      & \longmapsto    & 2      \\
+           & \text{Codificación}  &                  & \text{Clave}=300 &         \\
+    AAAA   & \longmapsto          & 0                & \longmapsto      & 300     \\
+    AAAB   & \longmapsto          & 1                & \longmapsto      & 301     \\
+    \vdots & \longmapsto          & \vdots           & \longmapsto      & \vdots  \\
+    AAAZ   & \longmapsto          & 26               & \longmapsto      & 326     \\
+    AABA   & \longmapsto          & 27               & \longmapsto      & 327     \\
+    \vdots & \longmapsto          & \vdots           & \longmapsto      & \vdots  \\
+    BEYC   & \longmapsto          & 23276            & \longmapsto      & 23576   \\
+    \vdots & \longmapsto          & \vdots           & \longmapsto      & \vdots  \\
+    ZZZZ   & \longmapsto          & 27^4 -1 = 531440 & \longmapsto      & 299     \\
     \hline
 \end{array}$$
 
+Con este ejemplo el proceso de codificación de BEYC tiene dos pasos: primero BEYC se convierte en la lista de números $(1,4,25,2)$ y después se convierte en este número
+$$1\cdot 27^3 + 4\cdot 27^2 + 25\cdot 27^1 + 2\cdot 27^0 = 23276$$
+Después ciframos sumando la clave. En el proceso de descifrado deberíamos aplicar el proceso inverso primero descifrando y después convirtiendo el mensaje en claro en un mensaje humano. Por ejemplo, supongamos que el mensaje cifrado es $25936$. Desciframos restando $300$, con lo que obtendríamos $25636$. Para decodificarlo tenemos que escribir este número en base $27$ dividiendo sucesivamente por $27$ y quedándonos con los restos:
+\begin{gather*}
+    25636 = 949\cdot 27 + 13 \\
+    949   = 35\cdot 27 + 4 \\
+    35    = 1\cdot 27 + 8
+\end{gather*}
+Luego $25636$ se corresponde con la lista $(1,8,4,13)$ que, de acuerdo con la tabla \ref{equation:eq1} corresponde con la palabra BIEN.
+
+A nosotors nos importa poco el proceso de codificación y nos interesaremos más en los procesos de cifrado y descifrado. Sin embargo, es importante tener en cuenta que en el proceso de codificación se debe elegir una buena plataforma para hacer los cálculos de encriptado. En los ejemplos más sencillos la plataforma era $\ZZ_n$ para un número $n$; en los más complicados era otra estructura algebraica más abstracta. Pero lo importante es tener métodos de cálculo eficientes. Por ejemplo en $\ZZ_n$ las operaciones se reducen a operaciones aritméticas sencillas: sumas, multiplicaciones y divisiones. No hay ningún problema en trabajar con cuerpos finitos ya que veremos métodos de cálculo rápidos con dichos cuerpos. Tampoco habría grandes problemas en utilizar como plataforma anillos de matrices de cuerpos finitos o anillos de polinomios de dichos cuerpos, ya que las operaciones con cuerpos finitos son fácilmente transferibles a estos otros anillos. Se podrían también utilizar anillos de naturaleza discreta como el de los números enteros o el cuerpo de los números racionales, así como extensiones finitas de este. Sin embargo, no se pueden utilizar plataformas en las que no se pueda describir los elementos de una forma finita. Por ejemplo, el cuerpo de los números reales no es apropiado como plataforma.
 
 \section{Entropía}
 

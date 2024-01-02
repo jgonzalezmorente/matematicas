@@ -1,7 +1,51 @@
 \chapter{Anillos}
+
+\section{Operaciones binarias}
+
+Sea $X$ un conjunto. Una {\it operación binaria} en $X$ es una aplicación $*:X\times X\rightarrow X$. La imagen de $(a,b)$ la denotamos por $a*b$. Decimos que $*$ es:
+\begin{itemize}
+    \item {\it Conmutativa} si $x*y=y*x$ para todo $x,y \in X$.
+    \item {\it Asociativa} si $x*(y*z)=(x*y)*z$ para todo $x,y,z \in X$.
+\end{itemize}
+
+Un elemento $x\in X$ se dice que es:
+\begin{itemize}
+    \item {\it Neutro por la izquierda (neutro por la derecha)} de $X$ con respecto a $*$ si $x*y = y$ para todo $y\in X$ ($y*x=y$ para todo $y\in X$).
+    \item {\it Cancelable por la izquierda (cancelable por la derecha)} en $X$ respecto a $*$ si para cada dos elementos distintos $a$ y $b$ de $X$ se verifica $x*a\neq x*b$ ($a*x\neq b*x$).
+    \item Supongamos que $e$ es un elemento neutro de $X$ con respecto a $*$. Sean $x$ e $y$ elementos de $X$. Decimos que $x$ es {\it simétrico de $y$ por la izquierda} y que $y$ es {\it simétrico de $x$ por la derecha} con respecto a $*$ si se verifica que $x*y=e$.
+\end{itemize}
+
+Decimos que $x$ es
+\begin{itemize}
+    \item {\it Neutro} de $X$ con respecto a $*$ si es neutro por la izquierda y por la derecha de $X$ con respecto a $*$.
+    \item {\it Cancelable} en $X$ con respecto a $*$ si es cancelable en $X$ con respecto a $*$ por los dos lados.
+    \item {\it Simétrico} de $y$ con respecto a $*$ si es simétrico de $y$ con respecto a $*$ por los dos lados. En tal caso decimos que $x$ es {\it invertible} de $X$ respecto a $*$.
+\end{itemize}
+
+Un par $(X,*)$ formado por un conjunto y una operación binaria $*$ decimos que es un
+\begin{itemize}
+    \item {\it Semigrupo} si $*$ es asociativa.
+    \item {\it Monoide} si es un semigrupo que tiene un elemento neutro con respecto a $*$.
+    \item {\it Grupo} si es un monoide y todo elemento de $X$ es invertible con respecto a $*$.
+    \item {\it Grupo abeliano} si es un grupo y $*$ es conmutativa.
+\end{itemize}
+
+En el futuro simplificaremos la terminología y en lugar de decir ``operación binaria'' diremos simplemente ``operación''. Por otro lado nos ahorraremos los ``con respecto a'' cuando la operación esté clara por el contexto y los ``de $X$'' o ``en $X$'' cuando el conjunto $X$ esté claro por el contexto o diremos que $e$ es neutro, neutro por un lado, inverso, invertible o cancelable en $(X,*)$.
+
+Veamos algunos ejemplos.
+
+\begin{ejs}{\it Operaciones}
+    \begin{enumerate}[label=(\arabic*)]
+        \item La suma es una operación en los conjuntos $\NN$ de los números naturales, $\ZZ^{\geq 0}$ de los enteros no negativos, $\ZZ$ de los números enteros, $\QQ$ de los números racionales, $\RR$ de los números reales y $\CC$ de los números complejos. En todos los casos se trata de una operación conmutativa y asociativa. Además $0$ es neutro. Todo elemento $a$ de $\ZZ$, $\QQ$, $\RR$ y $\CC$ es cancelable y es invertible con respecto a la suma y su simétrico es su opuesto $-a$. Por tanto $(\NN, +)$ es un semigrupo conmutativo, $(\ZZ^{\geq 0}, +)$ es un monoide conmutativo, y $(\ZZ, +)$, $(\QQ, +)$, $(\RR, +)$ y $(\CC, +)$ son grupos abelianos.
+    \end{enumerate}
+\end{ejs}
+
+
+
+
 \section{Ideales y anillos cociente}
 
-\begin{teo}[\textbf{Teorema de la Correspondencia}] Si $I$ es un ideal de un anillo $A$, las asignaciones $J\mapsto J/I$ y $X\mapsto\pi^{-1}(X)$ definen aplicaciones biyectivas (una inversa de la otra) que conservan la inclusión entre el conjunto de los ideales de $A$ que contienen al $I$ y el conjunto de los ideales de $A/I$.
+\begin{teo}[\textbf{Teorema de la Correspondencia}]\label{anillos:teo:1} Si $I$ es un ideal de un anillo $A$, las asignaciones $J\mapsto J/I$ y $X\mapsto\pi^{-1}(X)$ definen aplicaciones biyectivas (una inversa de la otra) que conservan la inclusión entre el conjunto de los ideales de $A$ que contienen al $I$ y el conjunto de los ideales de $A/I$.
 \end{teo}
 
 \begin{proof} \
@@ -54,8 +98,8 @@ y $\prod_{x\in X}I_x$ es el ideal formado por las sumas de productos de la forma
 
 \section{ Los Teoreamas de Isomorfía y Chino de los Restos}
 
-\begin{teo}[\textbf{Primer Teorema de Isomorfía}]
-    Sea $f:A\longrightarrow B$ un homomorfismo de anillos. Entonces existe un único isomorfismo de anillos $\overline{f}: A/\Ker f\longrightarrow \Im f$
+\begin{teo}[\textbf{Primer teorema de isomorfía}]
+    Sea $f:A\rightarrow B$ un homomorfismo de anillos. Entonces existe un único isomorfismo de anillos $\overline{f}: A/\Ker f\rightarrow \Im f$ que hace conmutativo el diagrama
 
     $$\xymatrix@C=1.5cm@R=1cm{ 
         A \ar[r]^f\ar[d]_p                     & B \\ 
@@ -67,7 +111,29 @@ y $\prod_{x\in X}I_x$ es el ideal formado por las sumas de productos de la forma
 \end{teo}
 
 \begin{proof}
-    Sean $K$ e $I=\Im f$. La aplicación $\overline{f}: A/K\longrightarrow I$ dada por $\overline{f}(x+K)=f(x)$ está bien definida (no depende de representantes) pues si $x+K=y+K$ entonces $x-y\in K$ y por lo tanto $f(x)-f(y)=f(x-y)=0$, es decir, $f(x)=f(y)$. Además es elemental ver que es un homomorfismo de anillos y que es suprayectiva. Para ver que es inyectiva, veamos que su nucleo es nulo. Si $x+K$ está en el núcleo de $\overline{f}$ entonces $0=\overline{f}(x+K)=f(x)$, de modo que $x\in K$ y así $x+K=0+K$. Es decir $\Ker\overline{f}=0$ y por lo tanto $f$ es inyectiva. En conclusión, $\overline{f}$ es un isomorfismo, y hace conmutativo el diagrama porque, para cada $x\in A$, se tiene
+    Sean $K=\Ker f$ e $I=\Im f$. La aplicación $\overline{f}: A/K\rightarrow I$ dada por $\overline{f}(x+K)=f(x)$ está bien definida (no depende de representantes) pues si $x+K=y+K$ entonces $x-y\in K$ y por lo tanto $f(x)-f(y)=f(x-y)=0$, es decir, $f(x)=f(y)$. Además es elemental ver que es un homomorfismo de anillos y que es suprayectiva. Para ver que es inyectiva, veamos que su nucleo es nulo. Si $x+K$ está en el núcleo de $\overline{f}$ entonces $0=\overline{f}(x+K)=f(x)$, de modo que $x\in K$ y así $x+K=0+K$. Es decir $\Ker\overline{f}=0$ y por lo tanto $f$ es inyectiva. En conclusión, $\overline{f}$ es un isomorfismo, y hace conmutativo el diagrama porque, para cada $x\in A$, se tiene
     $$i\left(\overline{f}\left(p(x)\right)\right)=\overline{f}(x+K)=f(x)$$
     En cuanto a la unicidad, supongamos que otro homomorfismo $\widehat{f}:A/K\longrightarrow I$ verifica que $i\circ \widehat{f} \circ p=f$; entonces para cada $x\in A$ se tiene $\widehat{f}(x+K)=i(\widehat{f}(p(x)))=f(x)=\overline{f}(x+K)$, y por lo tanto $\widehat{f}=\overline{f}$.
+\end{proof}
+
+\begin{teo}[\textbf{Segundo teorema de isomorfía}] Sea $A$ un anillo y sean $I$ y $J$ dos ideales tales $I\subseteq J$.
+    Entonces $J/I$ es ideal de $A/I$ y existe un isomorfismo de anillos
+    $$\frac{A/I}{J/I}\simeq A/J$$
+\end{teo}
+
+\begin{proof}
+    Por el teorema de la correspondencia \ref{anillos:teo:1}, $J/I$ es un ideal de $A/I$. Sea $f:A/I\rightarrow A/J$ la aplicación definida por $f(a+I)=a+J$. Es elemental ver que $f$ está bien definida, que es un homomorfismo suprayectivo de anillos y que $\Ker f = J/I$. Entonces el isomorfismo buscado se obtiene aplicando el primer teorma de isomorfía.
+\end{proof}
+
+\begin{teo}[\textbf{Tercer teorema de isomorfía}] Sea $A$ un anillo con un subanillo $B$ y un ideal $I$. Entonces:
+    \begin{enumerate}[label=(\arabic*)]
+        \item $B\cap I$ es un ideal de $B$.
+        \item $B+I$ es un subanillo de $A$ que contiene a $I$ como ideal.
+        \item Se tiene el isomorfismo de anillos
+        $$\frac{B}{B\cap I}\simeq \frac{B+I}{I}$$
+    \end{enumerate}    
+\end{teo}
+
+\begin{proof}
+    Los dos primeros apartados se dejan como ejercicio. En cuanto al último, sea $f:B\rightarrow A/I$ la composición de la inclusión $j:B\rightarrow A$ con la proyección $p:A\rightarrow A/I$. Es claro que $\Ker f=B\cap I$ y que $\Im f=(B+I)/I$, por lo que el resultado se sigue del primer teorema de isomorfía.
 \end{proof}
