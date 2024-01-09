@@ -59,3 +59,31 @@ son las ecuaciones paramétricas de una ``superfice'' en el espacio ordinario. C
 Un ejemplo estandar lo proporciona la parametrización usual de la esfera de centro $(0,0,0)$ y radio $R$, usando los parámetros habituales, latitud $\varphi$, y longitud $\theta$:
 $$x=R\cos\varphi\cos\theta, \quad y=R\cos\varphi\sen\theta, \quad z=R\sen\varphi$$
 Según sea el dominio $\Omega$ donde varían los parámetros se obtendrá como imagen un trozo de esfera, o toda la esfera. Así por ejemplo, el trozo de esfera que queda en $\conj{(x,y,z): y>0, \ z>0}$ se parametriza con $\Omega=\conj{(\varphi,\theta): 0<\varphi<\pi/2, \ 0<\theta<\pi}$.
+
+\subsubsection*{Funciones de tres variables}
+
+Una motivación geométrica para el estudio de las funciones reales de tres variables reales es el de las ``superficies'' definidas mediante una ecuación de la forma $g(x,y,z)=c$, como es el caso de la esfera $x^2+y^2+z^2=1$. Estas ``superficies'' se dice que admiten una representación {\it implícita} mediante la ecuación $g(x,y,z)=c$. Es claro que cualquier ``superficie'' dada en forma explícita $z=f(x,y)$ se puede representar implícitamente usando la ecuación $g(x,y,z)=0$ donde $g(x,y,z)=f(x,y)-z$. Con la esfera se pone de manifiesto que la clase de las ``superficies'' que admiten una ecuación implícita es estrictamente más amplia que la clase de las que admiten una representación explícita. (El teorema de la función implícita permitirá estudiar cuando una ``superficie'' dada en forma implícita admite representaciones explícitas locales).
+
+La gráfica de una función real de tres variables reales (caso $n=3$, $m=1$) es un subconjunto de $\RR^4$ y es imposible visualizarla. Una alternativa para visualizar geométricamente la función y dar interpretaciones físicas de su comportamiento es considerar sus ``superficies'' de nivel
+$$N_c=\conj{ (x,y,z)\in\Omega : f(x,y,z)=c}$$
+Estas ``superficies'', dadas en  forma implícita, se pueden visualizar en el espacio ordinario. Cuando se interpreta que la función $t=f(x,y,z)$ proporciona la temperatura $t$ del punto $(x,y,z)\in\Omega$, entonces las ``superfices'' de nivel se llaman isotermas y su distribución en el espacio permite apreciar como varía la temperatura en el recinto $\Omega\subset\RR^3$.
+
+Una ``curva'' en el espacio tridimensional $\RR^3$ puede venir dada como intersección de dos ``superficies'' expresadas en forma implícita
+$$g_1(x,y,z)=0, \quad g_2(x,y,z)=0$$
+En el estudio de una curva de esta clase interviene una función de tres variables reales con valores en $\RR^2$, $\g(x,y,z)=(g_1(x,y,z), g_2(x,y,z))$. El teorema de la función implícita servirá para decidir cuando una ``curva'' de este tipo admite una representación paramétrica local.
+
+\section{Coordenadas curvilíneas}
+
+En el caso $n=2$ y $m=2$, una función $\f(u,v)=(f_1(u,v),f_2(u,v))$ se puede interpretar como una transformación entre dos planos: El plano $(u,v)$ donde varían las variables independientes y el plano $(x,y)$ donde toman valores las variables dependientes $x=f_1(u,v)$, $y=f_2(u,v)$. La transformación se puede visualizar considerando las curvas, en el plano $(x,y)$, imágenes de las rectas $u=cte$, $v=cte$. Estas transformaciones intervienen en los problemas de cambio de variable en cálculo diferencial e integral. En este asunto, un problema expresado en términos de las variables originales $(x,y)$ mediante la sustitución $x=f_1(u,v)$, $y=f_2(u,v)$ se transforma en otro problema en términos de las nuevas variables $(u,v)$.
+
+Un ejemplo notable lo proporciona el cambio de variable a {\it coordenadas polares}, asociado a la transformación
+$$\g(r,\theta)=(r\cos\theta, r\sen\theta)$$
+
+En este caso, si $(x,y)=(r\cos\theta, r\sen\theta)$, con $r\geq 0$, se dice que $(r,\theta)$ son las coordenadas polares del punto $(x,y)$. Las coordenadas polares de un punto $(x,y)\neq (0,0)$ son únicas cuando se exige que $\theta$ varíe en un intervalo $(\alpha,\beta)$ con $\beta - \alpha\leq 2\pi$.
+
+En el caso $n=3$, $m=3$, una función $\f(t,u,v)=(f_1(t,u,v),f_2(t,u,v),f_3(t,u,v))$ se puede interpretar como una transformación en el espacio $\RR^3$. En una copia del espacio varían las variables independientes $(t,u,v)$ y en la otra toman valores las variables dependientes, $x=f_1(t,u,v)$, $y=f_2(t,u,v)$, $z=f_3(t,u,v)$. Igual que en el caso $n=2$, $m=2$ estas transformaciones intervendrán en los problemas de cambio de variable, donde un problema expresado en términos de las variables originales $(x,y,z)$ mediante la sustitución $x=f_1(t,u,v)$, $y=f_2(t,u,v)$, $z=f_3(t,u,v)$ se transforma en otro problema en términos de las nuevas variables $(t,u,v)$.
+
+Un ejemplo importante es el cambio de variable a {\it coordenadas esféricas}. Estas coordenadas son las asociadas a la transformación
+$$\g(\rho,\varphi,\theta)=(\rho\cos\varphi\cos\theta,\rho\cos\varphi\sen\theta, \rho\sen\varphi)$$
+En este caso, si $(x,y,z)=(\rho\cos\varphi\cos\theta,\rho\cos\varphi\sen\theta, \rho\sen\varphi)$ con $\rho\geq 0$, se dice que $(\rho,\varphi,\theta)$ son las coordenadas esféricas del punto $(x,y,z)$, a las variables $\varphi$, $\theta$ se les llama latitud y longitud por su interpretación obvia como coordenadas geográficas. Las coordenadas esféricas de un punto $(x,y,z)$, con $(x,y)\neq (0,0)$, son únicas cuando se exige que $\theta$ varíe en un intervalo $(\theta_0,\theta_1)$ con $\theta_1-\theta_0\leq 2\pi$ y que $\varphi$ varíe en un intervalo $(\varphi_0,\varphi_1)\subset(-\pi/2, \pi/2)$.
+

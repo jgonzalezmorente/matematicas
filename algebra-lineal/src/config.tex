@@ -26,6 +26,8 @@
 % Para incluir imágenes
 \usepackage{graphicx}
 
+% Para incluir imágenes
+\usepackage{xcolor}
 
 % Configuración de estilo de página
 \pagestyle{scrheadings}
@@ -53,6 +55,11 @@
 \newcommand{\abs}[1]{\left| #1\right|}
 \newcommand{\ent}[1]{\left\lfloor #1\right\rfloor}
 \newcommand{\eps}{\varepsilon}
+
+% Entornos personalizados
+\newenvironment{reader}
+{\quote\color{blue}\small}
+{\endquote}
 
 % Entornos para teoremas, lemas, etc.
 \newtheorem{teo}{Teorema}[chapter]

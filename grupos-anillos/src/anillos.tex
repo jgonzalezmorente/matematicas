@@ -37,10 +37,19 @@ Veamos algunos ejemplos.
 \begin{ejs}{\it Operaciones}
     \begin{enumerate}[label=(\arabic*)]
         \item La suma es una operación en los conjuntos $\NN$ de los números naturales, $\ZZ^{\geq 0}$ de los enteros no negativos, $\ZZ$ de los números enteros, $\QQ$ de los números racionales, $\RR$ de los números reales y $\CC$ de los números complejos. En todos los casos se trata de una operación conmutativa y asociativa. Además $0$ es neutro. Todo elemento $a$ de $\ZZ$, $\QQ$, $\RR$ y $\CC$ es cancelable y es invertible con respecto a la suma y su simétrico es su opuesto $-a$. Por tanto $(\NN, +)$ es un semigrupo conmutativo, $(\ZZ^{\geq 0}, +)$ es un monoide conmutativo, y $(\ZZ, +)$, $(\QQ, +)$, $(\RR, +)$ y $(\CC, +)$ son grupos abelianos.
+        \item Otra operación conmutativa y asociativa en $\NN$, $\ZZ^{\geq 0}$, $\QQ$, $\RR$ y $\CC$ es el producto. En este caso el $1$ es el neutro y todo elemento $a\neq 0$ de $\QQ$, $\RR$ y $\CC$ es invertible y su simétrico es su inverso $a^{-1}$. Sin embargo, en $\ZZ$ solamente $1$ y $-1$ son invertibles respecto del producto mientras que $1$ es el único elemento invertible de $\NN$ y $\ZZ^{\geq 0}$. Por tanto, el producto define en todos estos conjuntos una estructura de monoide conmutativo y define una estructura de grupo abeliano en $\QQ-\conj{0}$, $\RR-\conj{0}$ y $\CC-\conj{0}$. El único elemento de estos conjuntos que no es cancelativo con respecto al producto es el cero.
+        \item Sea $A$ un conjunto y sea $X=A^A$, el conjunto de las aplicaciones de $A$ en $A$. La composición de aplicaciones define una operación asociativa en $X$ para la que la identidad $1_X$ es neutro. Por tanto, $(A^A, \circ)$ es un monoide. Sin embargo, esta operación no es conmutativa si $A$ tiene al menos dos elementos.
+        \item Sea $A$ un conjunto y sea $X=\RR^A$ el conjunto de las aplicaciones de $A$ en $\RR$. Definimos la suma en $X$ poniendo
+        $$(f+g)(a)=f(a)+g(a), \quad a\in A$$
+        Esta es una operación conmutativa y asociativa, la aplicación $0$ dada por $0(a)=0$ para todo $a\in A$ es un neutro y para toda aplicación $f:A\rightarrow\RR$, el simétrico de $f$ con respecto a $+$ es la aplicación $-f$ dada por $(-f)(a)=-f(a)$. Por tanto, $(\RR^A,+)$ es un grupo abeliano.
+
+        Definimos ahora el producto $\cdot$ en $X$ poniendo
+        $$(f\cdot g)(a)=f(a)g(a), \quad a\in A$$
+        Esta operación también es conmutativa y asociativa y tiene por neutro la aplicación $1$ dada por $1(a)=1$ para todo $a\in A$. Para que un elemento $f$ de $X$ sea invertible es necesario y suficiente que $f(a)\neq 0$ para todo $a\in A$. En tal caso el simétrico de $f$ con respecto a $\cdot$ es la aplicación $g$ dada por $g(a)=g(a)^{-1}$. Luego $(\RR^A, \cdot)$ es un monoide conmutativo.
     \end{enumerate}
 \end{ejs}
 
-
+Veamos ahora algunas propiedades básicas de las definiciones dadas más arriba.
 
 
 \section{Ideales y anillos cociente}

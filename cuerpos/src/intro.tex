@@ -1,0 +1,38 @@
+\chapter{Introducción}
+
+En la escuela aprendimos a resolver ecuaciones lineales
+\begin{equation}\label{eq:1}
+    aX + b = 0
+\end{equation}
+y cuadráticas
+\begin{equation}\label{eq:2}
+    aX^2 + bX + c = 0
+\end{equation}
+donde $a,b$ y $c$ son números y supondremos que $a\neq 0$. Es bien sabido que la única solución de la ecuación \ref{eq:1} es $-\frac{b}{a}$ y que la ecuación \ref{eq:2} tiene a lo sumo dos soluciones que se obtienen al elegir el signo de la raíz cuadrada de la siguiente expresión:
+\begin{equation}\label{eq:3}
+    \frac{-b\pm \sqrt{b^2-4ac}}{2a}    
+\end{equation}
+En realidad, si $b^2=4ac$, entonces la ecuación \ref{eq:2} tiene una única solución y, si nos restringimos a los números reales, entonces la ecuación no tiene solución si $b^2-4ac$ es negativo.
+
+Las ecuaciones \ref{eq:1} y \ref{eq:2} aparecen naturalmente en multitud de problemas y sus soluciones son conocidas desde tiempos de los babilonios. Sin embargo, hasta el Renacimiento no se descubrieron fórmulas para resolver las ecuaciones de tercer y cuarto grado, conocidas con el nombre de cúbicas y cuárticas respectivamente. Al parecer Scipione del Ferro (1465?-1526) fue el primero en descubrir una fórmula para resolver ecuaciones de tercer grado. Los descubrimientos de del Ferro no fueron divulgados y fueron redescubiertos más tarde por Nicolo Fontana (1500?-1557), conocido con el nombre de Tartaglia (``El Tartamudo''). El método para resolver la cúbica fue guardado en secreto por Tartaglia hasta que se lo comunicó a Gerolamo Cardano (1501-1576) con la condición de que no lo hiciera público. Sin embargo, Cardano rompió su promesa con Fontana y en 1545 publicó la fórmula de Tartaglia en su libro {\it Artis Magnae sive de Regulis Algebricis}, más conocido con el nombre de {\it Ars Magna}. En este libro Cardano no sólo publica la fórmula de Tartaglia, sino también la solución de la cuártica que entretanto había sido descubierta por Ludovico Ferrai (1522-1565).
+
+Vamos a ver como resolver la cúbica
+\begin{equation}
+    aX^3+bX^2+cX+d=0\quad (a\neq 0)
+\end{equation}
+Está claro que poniendo,
+$$B=\frac{b}{a}, \quad C=\frac{c}{a}, \quad D=\frac{d}{a}$$
+la ecuación anterior toma la forma
+\begin{equation}
+    X^3+BX^2+CX+D=0
+\end{equation}
+Después de la siguiente igualdad
+$$X^3+BX^2+CX+D=\left(X+\frac{B}{3}\right)^3+\left(C-\frac{B^2}{3}\right)\left(X+\frac{B}{3}\right)+D+\frac{2B^3}{27}-\frac{BC}{3}$$
+podemos poner
+$$Y=X+\frac{B}{3}, \quad p=C-\frac{B^2}{3}, \quad q=D+\frac{2B^3}{27}-\frac{BC}{3}$$
+de forma que la ecuación anterior toma la forma $Y^3+pY+q=0$.
+
+Por tanto podemos concentrarnos en las ecuaciones de la siguiente forma
+\begin{equation}
+    X^3+pX+q=0
+\end{equation}
