@@ -87,3 +87,23 @@ Un ejemplo importante es el cambio de variable a {\it coordenadas esféricas}. E
 $$\g(\rho,\varphi,\theta)=(\rho\cos\varphi\cos\theta,\rho\cos\varphi\sen\theta, \rho\sen\varphi)$$
 En este caso, si $(x,y,z)=(\rho\cos\varphi\cos\theta,\rho\cos\varphi\sen\theta, \rho\sen\varphi)$ con $\rho\geq 0$, se dice que $(\rho,\varphi,\theta)$ son las coordenadas esféricas del punto $(x,y,z)$, a las variables $\varphi$, $\theta$ se les llama latitud y longitud por su interpretación obvia como coordenadas geográficas. Las coordenadas esféricas de un punto $(x,y,z)$, con $(x,y)\neq (0,0)$, son únicas cuando se exige que $\theta$ varíe en un intervalo $(\theta_0,\theta_1)$ con $\theta_1-\theta_0\leq 2\pi$ y que $\varphi$ varíe en un intervalo $(\varphi_0,\varphi_1)\subset(-\pi/2, \pi/2)$.
 
+Otro ejemplo notable lo proporcionan las {\it coordenadas cilíndricas}, asociadas a la transformación
+$$\g(r,\theta, t)=(r\cos\theta,r\sen\theta,t)$$
+Si $(x,y,z)=(r\cos\theta,r\sen\theta,t)$ con $r\geq 0$, se dice que $(r,\theta,t)$ son las coordenadas cilíndricas del punto $(x,y,z)$. Si $(x,y)\neq (0,0)$ las coordenadas cilíndricas de $(x,y,z)$ son únicas cuando se exige que $\theta$ varíe en un intervalo $(\theta_0,\theta_1)$ con $\theta_1-\theta_0\leq 2\pi$.
+
+Cierto tipo de conjuntos $M\subset\RR^3$ se describen fácilmente usando coordenadas esféricas o cilíndricas. Como esta descripción se utilizará con frecuencia al efectuar cambios de variable en integrales triples, conviene adquirir destreza en el problema geométrico de describir subconjuntos de $\RR^3$ usando este tipo de coordenadas.
+
+\section{Ejercicios propuestos}
+
+\begin{ejer}
+    Sea $\f(t)=(f_1(t),\dots,f_n(t))$, $t\in [a,b]$ una trayectoria de clase $C^1$, que describe la curva $C=\f([a,b])$ y cumple la condición
+    $$(f'_1(t),\dots,f'_n(t))\neq (0,\dots,0)\text{ para cada }t\in [a,b]$$
+    Demuestre que la trayectoria sólo pasa un número finito de veces por cada punto de la curva $C$.
+\end{ejer}
+
+\begin{reader}
+    \begin{proof}[Solución] Supongamos que existe un punto $\p$ en la trayectoria por el que la curva pasa infinitas veces. Sea $\conj{t_n}_{n=1}^\infty$ una sucesión infinita, tal que $\f(t_n)=\p$ para todo $n\in\NN$. Puesto que la sucesión está contenida en el compacto $[a,b]$, por el teorema de Bolzano-Weierstrass, debe tener un punto de acumulación $s$. Sea $\conj{t_{n_k}}_{k=1}^\infty$ una subsucesión de $\conj{t_n}_{n=1}^\infty$ que converja a $s$. 
+    
+    Fijemos $i\in\conj{1,\dots,n}$ y apliquemos el teorema del valor medio a la función $f_i$ para obtener $s_{k,i} \in[t_{n_k},t_{n_{k+1}}]$ tal que $f'_i(s_{k,i})=0$ para cada $k\in\NN$. Como la sucesión $\conj{s_{k,i}}_{k=1}^\infty$ converge a $s$ y $f'_i$ es continua, se tiene que $f'_i(s)=0$. Como esto es cierto para cada $i\in\conj{1,\dots,n}$, resulta que $\f'(s)=0$ llegando a una contradicción. Por lo que la trayectoria solo pasa un número finito de veces por cada punto de $C$.
+    \end{proof}
+\end{reader}

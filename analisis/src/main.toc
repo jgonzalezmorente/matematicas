@@ -4,3 +4,4 @@
 \contentsline {section}{\numberline {1.2}Funciones de una variable}{2}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Funciones de varias variables}{2}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Coordenadas curvilíneas}{4}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Ejercicios propuestos}{5}{section.1.5}%
