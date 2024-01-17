@@ -3,7 +3,7 @@
 
 Designaremos por $\ZZ$ el conjunto de los números enteros. La teoría de la divisibilidad en $\ZZ$ es consecuencia de la siguiente importante propiedad.
 
-\begin{teo}[\textbf{de la división entera}]\label{teo:1}
+\begin{teo}[\textbf{de la división entera}]\label{div_num_enteros:teo:1}
     Dados $a,b\in\ZZ$, $b\neq 0$, existen dos únicos números enteros $q$ y $r$ que cumplen $a=bq+r$, $0\leq r<|b|$. Estos números $q$ y $r$ se llaman el cociente y el resto de la división entera de $a$ por $b$.    
 \end{teo}
 
@@ -18,22 +18,22 @@ Si el resto de la división entera de $a$ por $b$ es $0$, se dice que $a$ es un 
     \item si $a\in (b)$ y $c$ es cualquier entero, entonces $ac\in(b)$.
 \end{itemize}
 
-\begin{prop}\label{prop:1}
+\begin{prop}\label{div_num_enteros:prop:1}
     Si el subconjunto $I\subset\ZZ$ cumple
     \begin{enumerate}[label=(\arabic*)]
-        \item\label{en1:it1} $a, b\in I\Rightarrow a + b\in I$
-        \item\label{en1:it2} $a\in I, c\in\ZZ\Rightarrow ac\in I$
+        \item\label{div_num_enteros:en1:it1} $a, b\in I\Rightarrow a + b\in I$
+        \item\label{div_num_enteros:en1:it2} $a\in I, c\in\ZZ\Rightarrow ac\in I$
     \end{enumerate}
     entonces existe un $b\in\ZZ$ tal que $I=(b)$.
 \end{prop}
 
 \begin{proof}
-    Si $I=\{0\}$, entonces $I=(0)$. Si $I$ contiene un elemento no nulo $a$, también contiene $-a=a\cdot(-1)$, y o bien $a$ o bien $-a$ es positivo. Por tanto, $I$ contiene enteros positivos. Sea $b$ el menor de los enteros positivos contenidos en $I$. Por \ref{en1:it2}, $I$ contiene todos los múltiplos de $b$: $(b)\subset I$. Vamos a ver que $I\subset (b)$, y por tanto, $I=(b)$. En efecto, dado $a\in I$ cualquiera, por el teorema \ref{teo:1},
+    Si $I=\{0\}$, entonces $I=(0)$. Si $I$ contiene un elemento no nulo $a$, también contiene $-a=a\cdot(-1)$, y o bien $a$ o bien $-a$ es positivo. Por tanto, $I$ contiene enteros positivos. Sea $b$ el menor de los enteros positivos contenidos en $I$. Por \ref{div_num_enteros:en1:it2}, $I$ contiene todos los múltiplos de $b$: $(b)\subset I$. Vamos a ver que $I\subset (b)$, y por tanto, $I=(b)$. En efecto, dado $a\in I$ cualquiera, por el teorema \ref{div_num_enteros:teo:1},
     $$a=bq+r, \quad 0\leq r<|b|=b$$
-    Por \ref{en1:it1} y \ref{en1:it2}, $r=a-bq=a+b(-q)\in I$; pero $0\leq r<|b|=b$ y $b$ es el menor de los enteros positivos de $I$; así pues, $r=0$, y por tanto $a=bq\in (b)$.
+    Por \ref{div_num_enteros:en1:it1} y \ref{div_num_enteros:en1:it2}, $r=a-bq=a+b(-q)\in I$; pero $0\leq r<|b|=b$ y $b$ es el menor de los enteros positivos de $I$; así pues, $r=0$, y por tanto $a=bq\in (b)$.
 \end{proof}
 
-Un subconjunto $I$ que cumple las condiciones \ref{en1:it1} y \ref{en1:it2} de la proposición \ref{prop:1} se llama un {\it ideal} de $\ZZ$. El elemento $b$ tal que $I=(b)$ se denomina {\it base} del ideal.
+Un subconjunto $I$ que cumple las condiciones \ref{div_num_enteros:en1:it1} y \ref{div_num_enteros:en1:it2} de la proposición \ref{div_num_enteros:prop:1} se llama un {\it ideal} de $\ZZ$. El elemento $b$ tal que $I=(b)$ se denomina {\it base} del ideal.
 
 \begin{ejer}
     Demostrar que,
@@ -44,7 +44,7 @@ Obsérvese que $(a)\subset (b)$ si y sólo si $b\mid a$. Las cuestiones de divis
 
 \section{Mínimo común múltiplo y máximo común divisor}
 
-Dados números enteros $a_1,\dots,a_n$, la intersección $(a_1)\cap\cdots\cap(a_n)$ es el conjunto de los números enteros múltiplos comunes de todos ellos de todos ellos. Este conjunto cumple las dos condiciones de la proposición \ref{prop:1}, y por tanto, $(a_1)\cap\cdots\cap(a_n)=(m)$ para un $m$ conveniente. Este $m$ está carecterizado por las dos propiedades siguientes:
+Dados números enteros $a_1,\dots,a_n$, la intersección $(a_1)\cap\cdots\cap(a_n)$ es el conjunto de los números enteros múltiplos comunes de todos ellos de todos ellos. Este conjunto cumple las dos condiciones de la proposición \ref{div_num_enteros:prop:1}, y por tanto, $(a_1)\cap\cdots\cap(a_n)=(m)$ para un $m$ conveniente. Este $m$ está carecterizado por las dos propiedades siguientes:
 
 \begin{itemize}
     \item $m$ es múltiplo común de $a_1,\dots,a_n$
@@ -56,9 +56,9 @@ $$m=\mcm{a_1,\dots,a_n}$$
 
 Observemos que también $-m$ es mínimo común múltiplo de $a_1,\dots,a_n$.
 
-Consideremos ahora la unión $(a_1)\cup\cdots(a_n)$. Este conjunto, en general, no cumple las condiciones de la proposición \ref{prop:1}. Por ejemplo, $(2)\cup (3)$ no contiene el $5=2+3$. Formemos a partir de $(a_1)\cup\cdots\cup (a_n)$ un subconjunto $I$ de $\ZZ$ que cumpla las condiciones de la proposición \ref{prop:1}, Por la condición \ref{en1:it1}, $I$ debe contener todas las sumas de múltiplos de $a_1,\dots,a_n$: $a_1c_1+\cdots+a_nc_n$. No hace falta ampliar más, el conjunto
+Consideremos ahora la unión $(a_1)\cup\cdots(a_n)$. Este conjunto, en general, no cumple las condiciones de la proposición \ref{div_num_enteros:prop:1}. Por ejemplo, $(2)\cup (3)$ no contiene el $5=2+3$. Formemos a partir de $(a_1)\cup\cdots\cup (a_n)$ un subconjunto $I$ de $\ZZ$ que cumpla las condiciones de la proposición \ref{div_num_enteros:prop:1}, Por la condición \ref{div_num_enteros:en1:it1}, $I$ debe contener todas las sumas de múltiplos de $a_1,\dots,a_n$: $a_1c_1+\cdots+a_nc_n$. No hace falta ampliar más, el conjunto
 $$I=\set{a_1c_1 + \cdots + a_nc_n \ | \ c_1,\dots,c_n\in\ZZ }$$
-cumple ya las condiciones de la proposición \ref{prop:1}, y por tanto, existe un entero $d$ tal que $I=(d)$. Denotaremos $I$ por $(a_1,\dots,a_n)$. Así pues, $I=(a_1,\dots,a_n)=(d)$. Este número $d$ está caracterizado por las dos propiedades siguientes:
+cumple ya las condiciones de la proposición \ref{div_num_enteros:prop:1}, y por tanto, existe un entero $d$ tal que $I=(d)$. Denotaremos $I$ por $(a_1,\dots,a_n)$. Así pues, $I=(a_1,\dots,a_n)=(d)$. Este número $d$ está caracterizado por las dos propiedades siguientes:
 \begin{itemize}
     \item $d$ es divisor común de $a_1,\dots,a_n$, ya que ello equivale a a firmar que $a_i\in (d)$ para $i=1,\dots,n$. ($a_i=a_1\cdot 0 + \cdots + a_i\cdot 1 + \cdots a_n\cdot 0 \in I$).
     \item Cualquier otro divisor $d'$ común a $a_1,\dots,a_n$ divide a $d$. En efecto, que $d'$ sea divisor de $a_1,\dots,a_n$ significa que $a_i\in (d')$, $i=1,\dots,n$. Por tanto, $\set{a_1c_1+\cdots a_nc_n \ | \ c_i\in\ZZ}\subset (d')$, es decir, $(d)\subset (d')$, lo cual implica que $d'$ es un divisor de $d$.
@@ -113,8 +113,7 @@ Las divisiones enteras efectuadas en el algoritmo de Euclides nos permiten expre
 $$d=r_k=r_{k-2}-r_{k-1}q_k$$
 $d$ se expresa como una suma de un múltiplo de $r_{k-2}$ y un múltiplo de $r_{k-1}$. Ahora bien, 
 $$r_{k-1}=r_{k-3}-r_{k-2}q_{k-1}$$
-y sustituyendo en la igualdad anterior obtenemos una expresión de $d$ como una suma de un múltiplo de $r_{k-3}$ y un múltiplo de $r_{k-2}$. Volviendo a sustituir convenientemente, podemos expresar $d$ como suma de múltiplos de $r_{k-4}$ y $r_{k-3}$; y así sucesivamente hasta obtener la identidad de Bézout
-
+y sustituyendo en la igualdad anterior obtenemos una expresión de $d$ como una suma de un múltiplo de $r_{k-3}$ y un múltiplo de $r_{k-2}$. Volviendo a sustituir convenientemente, podemos expresar $d$ como suma de múltiplos de $r_{k-4}$ y $r_{k-3}$; y así sucesivamente hasta obtener la identidad de Bézout,
 $$d=ar+bs$$
 
 \begin{reader}
@@ -127,14 +126,41 @@ $$d=ar+bs$$
     \end{cases}$$
 \end{reader}
 
-En el próximo apartado (proposición \ref{prop:2}) demostraremos que si $m=\mcm{a,b}$ y $d=\mcd{a,b}$ entonces $md=\pm ab$. Esto permite calcular $m$ si conodemos $d$. Para el cálculo de mínimo común múltiplo de más de números utilizaremos:
-
+En el próximo apartado (proposición \ref{div_num_enteros:prop:2}) demostraremos que si $m=\mcm{a,b}$ y $d=\mcd{a,b}$ entonces $md=\pm ab$. Esto permite calcular $m$ si conocemos $d$. Para el cálculo de mínimo común múltiplo de más de números utilizaremos:
 \begin{ejer}   
     $$\mcm{a_1,a_2,a_3}=\mcm{\mcm{a_1,a_2},a_3}$$
     y, en general,
     $$\mcm{a_1,\dots,a_n}=\mcm{\mcm{a_1,\dots,a_{n-1}},a_n}$$        
 \end{ejer}
 
-\begin{prop}\label{prop:2}
-    
+\section{Números primos entre sí y números primos}
+
+Se dice que $a$ y $b$ son {\it primos entre sí} si $\mcd{a,b}=1$.
+\begin{ejs} \
+    \begin{enumerate}[label=(\arabic*)]
+        \item $\mcd{3,8}=1$. Observemos que $1=3\cdot 3 + 8\cdot(-1)$
+        \item Si $d=\mcd{a,b}$ y $a=da'$, $b=db'$, entonces $\mcd{a',b'}=1$. En efecto, si $d'$ fuera un divisor común de $a'$ y $b'$, entonces $dd'$ sería divisor común de $a$ y $b$ y, por tanto, un divisor de $d$. Esto sólo es posible si $d'=\pm 1$.
+    \end{enumerate}    
+\end{ejs}
+
+\begin{teo}[\textbf{de Euclides}].\label{div_num_enteros:teo:2}
+    Si $a\mid bc$ y $\mcd{a,b}=1$ entonces $a\mid c$.
+\end{teo}
+
+\begin{proof}
+    Si $1=\mcd{a,b}$, podemos expresar $1$ como $1=ar+bs$. Multiplicando por $c$ obtenemos $c=acr+bcs$. Pero $a$ divide a los dos sumandos y, por tanto $a\mid c$.
+\end{proof}
+
+\begin{prop}\label{div_num_enteros:prop:2}
+    Si $m=\mcm{a,b}$ y $d=\mcd{a,b}$, entonces se cumple $md=\pm ab$.
+\end{prop}
+
+\begin{proof}
+    Pongamos $a=da'$ y $b=db'$. Se trata de ver que $m=\pm da'b'$ es un mínimo común múltiplo de $a$ y $b$. Es evidente que $da'b'$ es múltiplo común de $a$ y $b$. Sea $n$ otro múltiplo común de $a$ y $b$; es decir, $n=ar=bs$. Entonces $da'r=db's$, de donde $a'r=b's$ con $a'$, $b'$ primos entre sí, Entonces por el teorema \ref{div_num_enteros:teo:2}, $a'$ divide a $s$, es decir, $s=a'h$ y $n=bs=db'a'h$. Así resulta que $n$ es múltiplo de $db'a'$.
+\end{proof}
+
+Cualquier número entero $p$ es divisible por $\pm 1$ y por $\pm p$. Diremos que $p$ es {\it primo} si estos son sus únicos divisores. El $1$ y el $-1$ no se consideran números primos.
+
+\begin{prop}
+    El conjunto de los números primos es infinito.
 \end{prop}

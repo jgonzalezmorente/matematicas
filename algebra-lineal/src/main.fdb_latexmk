@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1704526571 "/Users/prognio/src/matematicas/algebra-lineal/src/main.tex" "main.pdf" "main" 1704526571 0
+["pdflatex"] 1705495303 "/Users/prognio/src/matematicas/algebra-lineal/src/main.tex" "main.pdf" "main" 1705495304 0
   "/Users/prognio/src/matematicas/algebra-lineal/src/main.tex" 1701931880 232 6e67966498a5ed1ad7e804cc9ca4d198 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -124,12 +124,12 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1699791590 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1699791545 7883458 fdb503132b5a1ac18feb7aea3433bfea ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "config.tex" 1704526570 3001 e3fecafb1d656e917078627127f652b0 ""
-  "div_num_enteros.tex" 1704464408 8357 e4d7910bd31b5f2c05b67e31f57395b9 ""
-  "main.aux" 1704526571 1448 e92353625e67ba81cecb18e1432a5233 "pdflatex"
-  "main.out" 1704526571 728 6b4b2cb44da5052aac02fd800a62407f "pdflatex"
+  "config.tex" 1705485133 2983 c6662e46aabfb25ce5894b4af01e5885 ""
+  "div_num_enteros.tex" 1705495303 10318 8f7c450201229a074a76329775f5fa8c ""
+  "main.aux" 1705495304 1749 fce628327c8b45bba5d9e91626accc48 "pdflatex"
+  "main.out" 1705495304 1009 702163457638ca2ebf21f04a33e3146b "pdflatex"
   "main.tex" 1701931880 232 6e67966498a5ed1ad7e804cc9ca4d198 ""
-  "main.toc" 1704526571 317 d1f2d5b176d88bde226d35e5069f3d04 "pdflatex"
+  "main.toc" 1705495304 420 4a561fcb857d22242a3e044ea1a610eb "pdflatex"
   (generated)
   "main.aux"
   "main.log"
