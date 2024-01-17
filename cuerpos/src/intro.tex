@@ -33,6 +33,31 @@ $$Y=X+\frac{B}{3}, \quad p=C-\frac{B^2}{3}, \quad q=D+\frac{2B^3}{27}-\frac{BC}{
 de forma que la ecuación anterior toma la forma $Y^3+pY+q=0$.
 
 Por tanto podemos concentrarnos en las ecuaciones de la siguiente forma
-\begin{equation}
+\begin{equation}\label{eq:4}
     X^3+pX+q=0
+\end{equation}
+
+Por ejemplo, podemos plantearnos el problema de calcular la longitud de las aristas de un cubo cuyo volumen sea seis unidades mayor que el área total de las caras exteriores. Si $X$ es la longitud de una arista, entonces el volumen $X^3$ y cada una de las seis caras exteriores tiene un área igual a $X^2$. Por tanto $X$ satisface la ecuación
+$$X^3=6X^2+6\quad\text{ó}\quad X^3-6X^2-6=0$$
+Poniendo $Y=X+2$ nos quedamos con la ecuación
+\begin{equation*}
+    \begin{split}
+        0 & = (Y+2)^3 - 6(Y+2)^2 - 6 \\
+          & = Y^3 + 6Y^2 + 12Y + 8 - 6Y^2 - 24Y - 24 - 6 \\
+          & = Y^3 -12Y - 22
+    \end{split}
+\end{equation*}
+Para resolver la ecuación \ref{eq:4} del Ferro y Tartaglia ponían
+$$X=u+v$$
+con lo que la ecuación \ref{eq:4} se convierte en
+$$u^3+3u^2v+3uv^2+v^3+pu+pv+q=0$$
+o
+$$u^3+v^3+(3uv+p)(u+v)+q=0$$
+Como hemos cambiado una variable por otras dos, es natural imponer alguna condición adicional entre las dos variables $u$ y $v$. Por ejemplo, la última ecuación se simplifica bastante si ponemos $3uv+p=0$, con lo que nos quedamos con el siguiente sistema
+$$u^3+v^3+q=0, \quad v=-\frac{p}{3u}$$
+de donde se obtiene
+$$u^3-\frac{p^3}{27u^3}+q=0$$
+Multiplicando por $u^3$ obtenemos
+\begin{equation}\label{eq:5}
+    u^6+qu^3-\left(\frac{p}{3}\right)^3=0
 \end{equation}

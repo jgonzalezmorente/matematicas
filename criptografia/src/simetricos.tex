@@ -215,6 +215,31 @@ Luego $25636$ se corresponde con la lista $(1,8,4,13)$ que, de acuerdo con la ta
 
 A nosotors nos importa poco el proceso de codificación y nos interesaremos más en los procesos de cifrado y descifrado. Sin embargo, es importante tener en cuenta que en el proceso de codificación se debe elegir una buena plataforma para hacer los cálculos de encriptado. En los ejemplos más sencillos la plataforma era $\ZZ_n$ para un número $n$; en los más complicados era otra estructura algebraica más abstracta. Pero lo importante es tener métodos de cálculo eficientes. Por ejemplo en $\ZZ_n$ las operaciones se reducen a operaciones aritméticas sencillas: sumas, multiplicaciones y divisiones. No hay ningún problema en trabajar con cuerpos finitos ya que veremos métodos de cálculo rápidos con dichos cuerpos. Tampoco habría grandes problemas en utilizar como plataforma anillos de matrices de cuerpos finitos o anillos de polinomios de dichos cuerpos, ya que las operaciones con cuerpos finitos son fácilmente transferibles a estos otros anillos. Se podrían también utilizar anillos de naturaleza discreta como el de los números enteros o el cuerpo de los números racionales, así como extensiones finitas de este. Sin embargo, no se pueden utilizar plataformas en las que no se pueda describir los elementos de una forma finita. Por ejemplo, el cuerpo de los números reales no es apropiado como plataforma.
 
+\section{Criptoanálisis}
+
+{\it Criptoanálisis} es la ciencia (¡o arte!) de desvelar un mensaje oculto sin necesidad de la clave con la que fue encriptado. La combinación de criptografía y criptoanálisis se llama {\it criptología}.
+
+La posibilidad de éxito del criptoanalista depende de la cantidad de información que posea. Por ejemplo, imaginemos las siguientes situaciones:
+
+\begin{enumerate}[label=(\arabic*)]
+    \item El criptoanalista cuenta con un mensaje cifrado de longitud suficentemente grande.
+    \item El criptoanalista posee uno o varios mensajes sin cifrar con su correspondiente mensaje cifrado.
+    \item El criptoanalista puede generar tanta parejas $(m,c)$ de mensajes en claro como desee junto con su correspondiente mensaje cifrado.
+\end{enumerate}
+
+Se supone que el criptoanalista conoce las funciones $c$ y $d$ de cifrado y descifrado y, o bien desea encontrar la clave utilizada para poder descifrar los mensajes, o bien simplemente quiere descifrar un mensaje concreto. El problema de descifrar los mensajes enviados con una clave se llama {\it Problema de Ruptura de un Criptosistema}.
+
+Veremos como realizar un criptoanálisis del Criptosistema de César. Supongamos que estamos en la situación de menor información posible, es decir, tenemos un mensaje cifrado con el Criptosistema de César (en la versión que los mensajes básicos son las $27$ letras del alfabeto español):
+\begin{center}
+    ÑWEWUEPKBNÑUKVKWMQKNÑMEIYWYVLBÑWYAERÑBYKMYBNKBVÑ
+\end{center}
+Suponemos que sabemos que el mensaje en claro es una frase en español. Como las letras más frecuentes son las vocales, las letras más frecuentes en el mensaje cifrado deben tener una gran intersección con las correspondientes a las vocales. Las dos letras más frecuentes en el mensaje anterior son la K y la Ñ, cada una de las cuales aparece $6$ veces. Probablemente una de éstas es el mensaje básico cifrado de la A. Probamos a descifrar con estas letras y descubrimos que el mensaje obtenido descifrando con la K es
+\begin{center}
+    ENUNLUGARDELAMANCHADECUYONOMBRENOQUIEROACORDARME
+\end{center}
+Claramente es difícil que la clave no sea K.
+
+Por tanto, aunque el Criptosistema de César satisface la primera condición para ser un buen criptosistema (rapidez de cifrado y descifrado) no cumple la condición de seguridad. La razón básica de por qué el Criptosistema de César no es seguro es que el número de claves es muy pequeño. Hemos hecho un análisis de frecuencia de las letras para evitar probar con las $27$ claves pero con la ayuda de ordenadores esto sería inmediato con lo que se rompería muy fácilmente. Un ataque consistente en probar todas las claves es lo que se llama {\it ataque por fuerza bruta} mientras que un análisis de frecuencias de los símbolos utilizados se suele llamar {\it ataque por análisis de frecuencias}.
 \section{Entropía}
 
 \begin{teo}

@@ -51,6 +51,34 @@ Veamos algunos ejemplos.
 
 Veamos ahora algunas propiedades básicas de las definiciones dadas más arriba.
 
+\begin{prop}\label{anillos:prop:1}
+    Sea $*$ una operación en un conjunto $X$.
+    \begin{enumerate}[label=(\arabic*)]
+        \item Si $*$ es conmutativa entonces todo neutro por un lado, es neutro, todo elemento cancelativo por un lado es cancelativo y todo elemento que tenga simétrico por un lado es invertible.
+        \item\label{anillos:enum:1} Si $e$ es un neutro por la izquierda y $f$ es un neutro por la derecha de $X$ con respecto a $*$ entonces $e=f$. En particular, $X$ tiene a lo sumo un neutro.
+        \item Supongamos que $(X, *)$ es un monoide y sea $a\in X$.
+        \begin{enumerate}[label=(\alph*)]
+            \item Si $x$ es simétrico por la izquierda de $a$ e $y$ es un simétrico por la derecha de $a$ entonces $x=y$.
+            \item Si $a$ tiene un simétrico por un lado entonces es cancelable por ese mismo lado. En particular todo elemento invertible es cancelable.
+        \end{enumerate}
+    \end{enumerate}
+\end{prop}
+
+\begin{proof} \
+    \begin{enumerate}[label=(\arabic*)]
+        \item Es obvio.
+        \item Como $e$ es neutro por la izquierda y $f$ es neutro por la derecha tenemos
+        $$f=e*f=e$$
+        \item[(3a)] Ahora suponemos que $(X,*)$ es un monoide. Por \ref{anillos:enum:1}, $(X,*)$ tiene un único neutro que vamos a denotar por $e$. Como $x$ es inverso por la izquierda de $a$ e $y$ es inverso por la derecha de $a$, usando la propiedad asociativa, tenemos que
+        $$y=e*y=(x*a)*y=x*(a*y)=x*e=x$$
+        \item[(3b)] Supongamos que $a$ es un elemento de $X$ que tiene un inverso por la izquierda $b$ y que $a*x=a*y$ para $x,y\in X$. Usando la asociatividad una vez más concluimos que
+        $$x=e*x=(b*a)*x=b*(a*x)=b*(a*y)=(b*a)*y=e*y=y$$        
+    \end{enumerate}
+\end{proof}
+
+Por la proposición \ref{anillos:prop:1}, si $(X,*)$ es un monoide cada elemento invertible $a$ sólo tiene un simétrico que habitualmente se denota por $a^{-1}$.
+
+
 
 \section{Ideales y anillos cociente}
 
@@ -105,7 +133,7 @@ y $\prod_{x\in X}I_x$ es el ideal formado por las sumas de productos de la forma
     \end{enumerate}
 \end{ej}
 
-\section{ Los Teoreamas de Isomorfía y Chino de los Restos}
+\section{Los Teoreamas de Isomorfía y Chino de los Restos}
 
 \begin{teo}[\textbf{Primer teorema de isomorfía}]
     Sea $f:A\rightarrow B$ un homomorfismo de anillos. Entonces existe un único isomorfismo de anillos $\overline{f}: A/\Ker f\rightarrow \Im f$ que hace conmutativo el diagrama

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  9 JAN 2024 12:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.12)  13 JAN 2024 19:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -479,12 +479,12 @@ Cap\'{\i }tulo 1.
 LaTeX Info: Redefining \. on input line 62.
 LaTeX Info: Redefining \% on input line 62.
  [2]
-LaTeX Info: Redefining \. on input line 105.
-LaTeX Info: Redefining \% on input line 105.
- [3] <xymatrix 2x2 182>
-LaTeX Info: Redefining \. on input line 135.
-LaTeX Info: Redefining \% on input line 135.
- [4])
+LaTeX Info: Redefining \. on input line 100.
+LaTeX Info: Redefining \% on input line 100.
+ [3]
+LaTeX Info: Redefining \. on input line 140.
+LaTeX Info: Redefining \% on input line 140.
+ [4] <xymatrix 2x2 182>)
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
  [5] (./main.aux
@@ -492,21 +492,21 @@ LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9C80EFFF9174F59FB7A9F59469F914F6;932.
+(rerunfilecheck)             Checksum: 0ADFECC361BF76E5FF9C4CBF5775EE07;924.
  ) 
 Here is how much of TeX's memory you used:
- 16665 strings out of 476025
- 279374 string characters out of 5790016
- 1871388 words of memory out of 5000000
- 36821 multiletter control sequences out of 15000+600000
+ 16675 strings out of 476025
+ 279463 string characters out of 5790016
+ 1872388 words of memory out of 5000000
+ 36823 multiletter control sequences out of 15000+600000
  526722 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,19n,123p,3284b,821s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,20n,123p,3284b,970s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (6 pages, 220620 bytes).
+Output written on main.pdf (6 pages, 222751 bytes).
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
+ 190 PDF objects out of 1000 (max. 8388607)
+ 146 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
