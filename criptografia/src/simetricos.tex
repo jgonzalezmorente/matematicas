@@ -240,6 +240,75 @@ Suponemos que sabemos que el mensaje en claro es una frase en español. Como las
 Claramente es difícil que la clave no sea K.
 
 Por tanto, aunque el Criptosistema de César satisface la primera condición para ser un buen criptosistema (rapidez de cifrado y descifrado) no cumple la condición de seguridad. La razón básica de por qué el Criptosistema de César no es seguro es que el número de claves es muy pequeño. Hemos hecho un análisis de frecuencia de las letras para evitar probar con las $27$ claves pero con la ayuda de ordenadores esto sería inmediato con lo que se rompería muy fácilmente. Un ataque consistente en probar todas las claves es lo que se llama {\it ataque por fuerza bruta} mientras que un análisis de frecuencias de los símbolos utilizados se suele llamar {\it ataque por análisis de frecuencias}.
+
+El Criptosistema de Vigenère es sólo un poco más seguro. Mejor dicho su seguridad dependerá de la longitud de la palabra clave. Aunque no se conozca dicha longitud si no es muy grande, un análisis de frecuencia de los caracteres que aparecen en el mensaje a intervalos regulares rompería el criptosistema de Vigenère. Esto lo veremos más adelante.
+
+Analicemos ahora el criptosistema lineal. En el caso en el que el conjunto de mensajes se identifica con $\ZZ_n$ y las claves son parejas $(a,b)\in\ZZ^*_n\times\ZZ_n$, para romper el criptosistema es suficiente encontrar dos parejas de mensajes básicos $(m_1,c_1)$ y $(m_2,c_2)$, donde $c_i$ es el mensaje cifrado de $m_i$, que nos sirvan para resolver el sistema de ecuaciones:
+\begin{gather*}
+    am_1 + b = c_1 \\
+    am_2 + b = c_2
+\end{gather*}
+en $\ZZ_n$. Obsérvese que si los vectores $(m_1,c_1)$ y $(m_2, c_2)$ son linealmente independientes, lo cual sucede con alta probabilidad, entonces el sistema tiene solución única.
+\begin{reader}
+¿Esto es cierto? no estamos en espacios vectoriales...
+\end{reader}
+
+En el caso en el que $M=C=\ZZ_n^d$ y $K=\GL_d(\ZZ_n)\times\ZZ_n^d$, el análisis es similar, aunque cuanto mayor sea $d$, más seguro será el criptosistema. En cualquier caso, si se cuenta con una cantidad suficientemente grande de parejas de mensajes básicos en claro con sus corresondientes cifrados, el sistema se puede romper de forma bastante fácil. Más concretamente, supongamos que disponemos de una lista de parejas de mensajes en claro y cifrados $(m_1,c_1),\dots,(m_k,c_k)$, con $m_i,c_i\in\ZZ_n^d$, $i=1,\dots,k$ y deseamos calcular la clave $(X,y)$ que se ha utilizado para cifrar con $X\in\GL_d(\ZZ_n)$ e $y\in\ZZ_n^d$. Planteamos el siguiente sistema de ecuaciones:
+\begin{align*}
+    \left\{
+        \begin{array}{lcl}
+             Xm_1 + y & =      & c_1 \\
+                      & \vdots & \\
+             Xm_k + y & =      & c_k \\
+        \end{array}
+    \right.
+\end{align*}
+Desarrollando el sistema se obtiene un sistema de ecuaciones lineales en el que las incógnitas son las entradas de la matriz $X$ y el vector $y$. Si $k$ es suficientemente grande probablemente el sistema es determinado y podremos encontrar la solución. Más concretamente, escribimos cada $m_i$ como $(m_{i1},\dots,m_{id})$ y cada $c_i$ como $(c_{i1},\dots,c_{id})$. Escribimos también las incógnitas $X$ e $y$, que corresponden a la clave buscada, en términos de sus coordenadas:
+$$X=\begin{pmatrix}
+    x_{11} & x_{12} & \cdots & x_{1d} \\
+    x_{21} & x_{22} & \cdots & x_{2d} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    x_{d1} & x_{d2} & \cdots & x_{dd} \\
+\end{pmatrix}, \quad y=(y_1,\dots,y_d)$$
+Entonces la ecuación $Xm_i + y = c_i$ se convierte en un sistema de ecuaciones lineales:
+\begin{reader}
+    \begin{align*}
+        \left.
+            \begin{array}{lll}
+                x_{11}m_{i1} + x_{12}m_{i2} + \cdots + x_{12}m_{id} + y_1 & = & c_{i1} \\
+                x_{21}m_{i1} + x_{22}m_{i2} + \cdots + x_{22}m_{id} + y_2 & = & c_{i2} \\
+                                                                        & \vdots &   \\
+                x_{d1}m_{i1} + x_{d2}m_{i2} + \cdots + x_{d2}m_{id} + y_d & = & c_{id} \\
+            \end{array}
+        \right\}\quad i=1,2,\dots,k
+    \end{align*}
+    Si para cada $i$ elegimos la ecuación $j$-ésima obtenemos:
+    \begin{align*}
+        \left.
+            \begin{array}{lll}
+                m_{11}x_{j1} + m_{12}x_{j2} + \cdots + m_{1d}x_{jd} + y_j & = & c_{1j} \\
+                m_{21}x_{j1} + m_{22}x_{j2} + \cdots + m_{2d}x_{jd} + y_j & = & c_{2j} \\
+                                                                        & \vdots &   \\
+                m_{k1}x_{j1} + m_{k2}x_{j2} + \cdots + m_{kd}x_{jd} + y_j & = & c_{kj} \\
+            \end{array}
+        \right\}\quad j=1,2,\dots,d
+    \end{align*}    
+\end{reader}
+Este sistema es compatible pues los $c_{ij}$ se han calculado a partir de los $m_{ij}$ utilizando estas expresiones para ciertos valores de los $x_{ij}$ e $y_i$. \begin{reader}
+    Obsérvese que todos los sistemas de ecuaciones lineales anteriores tienen la misma matriz de coeficientes:
+\end{reader}
+$$A=\begin{pmatrix}
+    m_{11} & m_{12} & \cdots & m_{1d} & 1 \\
+    m_{21} & m_{22} & \cdots & m_{2d} & 1 \\
+    \vdots & \vdots & \ddots & \vdots & \vdots \\
+    m_{21} & m_{22} & \cdots & m_{2d} & 1 \\
+\end{pmatrix}$$
+
+Si la matriz $A$ tiene rango $d+1$, el sistema tiene una única solución que podemos obtener con un poquito de álgebra lineal. \begin{reader}
+    Pero esto solo se puede hacer en espacios vectoriales y estamos en $\ZZ_n$.
+\end{reader}
+
+La solución obtenida proporciona la fila $j$-ésima de la matriz $X$ y la coordenada $j$-ésima de $y$.
 \section{Entropía}
 
 \begin{teo}
