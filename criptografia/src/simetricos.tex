@@ -248,10 +248,7 @@ Analicemos ahora el criptosistema lineal. En el caso en el que el conjunto de me
     am_1 + b = c_1 \\
     am_2 + b = c_2
 \end{gather*}
-en $\ZZ_n$. Obsérvese que si los vectores $(m_1,c_1)$ y $(m_2, c_2)$ son linealmente independientes, lo cual sucede con alta probabilidad, entonces el sistema tiene solución única.
-\begin{reader}
-¿Esto es cierto? no estamos en espacios vectoriales...
-\end{reader}
+en $\ZZ_n$. Obsérvese que si los vectores $(m_1,c_1)$ y $(m_2, c_2)$ son linealmente independientes, lo cual sucede con alta probabilidad, entonces el sistema tiene solución única. ¿Esto es cierto? no estamos en espacios vectoriales...
 
 En el caso en el que $M=C=\ZZ_n^d$ y $K=\GL_d(\ZZ_n)\times\ZZ_n^d$, el análisis es similar, aunque cuanto mayor sea $d$, más seguro será el criptosistema. En cualquier caso, si se cuenta con una cantidad suficientemente grande de parejas de mensajes básicos en claro con sus corresondientes cifrados, el sistema se puede romper de forma bastante fácil. Más concretamente, supongamos que disponemos de una lista de parejas de mensajes en claro y cifrados $(m_1,c_1),\dots,(m_k,c_k)$, con $m_i,c_i\in\ZZ_n^d$, $i=1,\dots,k$ y deseamos calcular la clave $(X,y)$ que se ha utilizado para cifrar con $X\in\GL_d(\ZZ_n)$ e $y\in\ZZ_n^d$. Planteamos el siguiente sistema de ecuaciones:
 \begin{align*}
@@ -271,32 +268,29 @@ $$X=\begin{pmatrix}
     x_{d1} & x_{d2} & \cdots & x_{dd} \\
 \end{pmatrix}, \quad y=(y_1,\dots,y_d)$$
 Entonces la ecuación $Xm_i + y = c_i$ se convierte en un sistema de ecuaciones lineales:
-\begin{reader}
-    \begin{align*}
-        \left.
-            \begin{array}{lll}
-                x_{11}m_{i1} + x_{12}m_{i2} + \cdots + x_{12}m_{id} + y_1 & = & c_{i1} \\
-                x_{21}m_{i1} + x_{22}m_{i2} + \cdots + x_{22}m_{id} + y_2 & = & c_{i2} \\
-                                                                        & \vdots &   \\
-                x_{d1}m_{i1} + x_{d2}m_{i2} + \cdots + x_{d2}m_{id} + y_d & = & c_{id} \\
-            \end{array}
-        \right\}\quad i=1,2,\dots,k
-    \end{align*}
-    Si para cada $i$ elegimos la ecuación $j$-ésima obtenemos:
-    \begin{align*}
-        \left.
-            \begin{array}{lll}
-                m_{11}x_{j1} + m_{12}x_{j2} + \cdots + m_{1d}x_{jd} + y_j & = & c_{1j} \\
-                m_{21}x_{j1} + m_{22}x_{j2} + \cdots + m_{2d}x_{jd} + y_j & = & c_{2j} \\
-                                                                        & \vdots &   \\
-                m_{k1}x_{j1} + m_{k2}x_{j2} + \cdots + m_{kd}x_{jd} + y_j & = & c_{kj} \\
-            \end{array}
-        \right\}\quad j=1,2,\dots,d
-    \end{align*}    
-\end{reader}
-Este sistema es compatible pues los $c_{ij}$ se han calculado a partir de los $m_{ij}$ utilizando estas expresiones para ciertos valores de los $x_{ij}$ e $y_i$. \begin{reader}
-    Obsérvese que todos los sistemas de ecuaciones lineales anteriores tienen la misma matriz de coeficientes:
-\end{reader}
+\begin{align*}
+    \left.
+        \begin{array}{lll}
+            x_{11}m_{i1} + x_{12}m_{i2} + \cdots + x_{12}m_{id} + y_1 & = & c_{i1} \\
+            x_{21}m_{i1} + x_{22}m_{i2} + \cdots + x_{22}m_{id} + y_2 & = & c_{i2} \\
+                                                                    & \vdots &   \\
+            x_{d1}m_{i1} + x_{d2}m_{i2} + \cdots + x_{d2}m_{id} + y_d & = & c_{id} \\
+        \end{array}
+    \right\}\quad i=1,2,\dots,k
+\end{align*}
+Si para cada $i$ elegimos la ecuación $j$-ésima obtenemos:
+\begin{align*}
+    \left.
+        \begin{array}{lll}
+            m_{11}x_{j1} + m_{12}x_{j2} + \cdots + m_{1d}x_{jd} + y_j & = & c_{1j} \\
+            m_{21}x_{j1} + m_{22}x_{j2} + \cdots + m_{2d}x_{jd} + y_j & = & c_{2j} \\
+                                                                    & \vdots &   \\
+            m_{k1}x_{j1} + m_{k2}x_{j2} + \cdots + m_{kd}x_{jd} + y_j & = & c_{kj} \\
+        \end{array}
+    \right\}\quad j=1,2,\dots,d
+\end{align*}
+Este sistema es compatible pues los $c_{ij}$ se han calculado a partir de los $m_{ij}$ utilizando estas expresiones para ciertos valores de los $x_{ij}$ e $y_i$. Obsérvese que todos los sistemas de ecuaciones lineales anteriores tienen la misma matriz de coeficientes:
+
 $$A=\begin{pmatrix}
     m_{11} & m_{12} & \cdots & m_{1d} & 1 \\
     m_{21} & m_{22} & \cdots & m_{2d} & 1 \\
@@ -304,9 +298,8 @@ $$A=\begin{pmatrix}
     m_{21} & m_{22} & \cdots & m_{2d} & 1 \\
 \end{pmatrix}$$
 
-Si la matriz $A$ tiene rango $d+1$, el sistema tiene una única solución que podemos obtener con un poquito de álgebra lineal. \begin{reader}
-    Pero esto solo se puede hacer en espacios vectoriales y estamos en $\ZZ_n$.
-\end{reader}
+Si la matriz $A$ tiene rango $d+1$, el sistema tiene una única solución que podemos obtener con un poquito de álgebra (pero esto solo se puede hacer en espacios vectoriales y estamos en $\ZZ_n$).
+
 
 La solución obtenida proporciona la fila $j$-ésima de la matriz $X$ y la coordenada $j$-ésima de $y$.
 \section{Entropía}
@@ -341,7 +334,7 @@ La solución obtenida proporciona la fila $j$-ésima de la matriz $X$ y la coord
     La condición \ref{item:l1-i1}, implica que $g$ es estrictamente creciente y, por tanto, para todo $m>1$ tenemos $g(m^s)<g(m^{s+1})$, es decir, $sg(m)<(s+1)g(m)$. Por tanto $g(m)$ es positivo.
 
     Sean $n$, $k$ y $m$ enteros mayores a $1$ y sea $s$ 
-    $$s=\max\conj{j\in\ZZ : j\geq 0, m^j\leq n^k}$$
+    $$s=\max\set{j\in\ZZ : j\geq 0, m^j\leq n^k}$$
     entonces $m^s\leq n^k<m^{s+1}$. Como $g$ es estrictamente creceinte, $g(m^s)\leq g(n^k)\leq g(m^{s+1})$, o equivalentemente
     $$sg(m)\leq kg(n)\leq (s+1)g(m)$$
     Como $\log$ también es una función creciente también tenemos

@@ -116,15 +116,13 @@ $$r_{k-1}=r_{k-3}-r_{k-2}q_{k-1}$$
 y sustituyendo en la igualdad anterior obtenemos una expresión de $d$ como una suma de un múltiplo de $r_{k-3}$ y un múltiplo de $r_{k-2}$. Volviendo a sustituir convenientemente, podemos expresar $d$ como suma de múltiplos de $r_{k-4}$ y $r_{k-3}$; y así sucesivamente hasta obtener la identidad de Bézout,
 $$d=ar+bs$$
 
-\begin{reader}
-    Veamos como definir una función recursiva para calcular los coeficientes de Bézout. Supongamos que $d=\alpha_i r_{k-i-1} + \beta_i r_{k-i}$, como $r_{k-i-2}=r_{k-i-1}q_{k-i}+r_{k-i}$, se obtiene que
-    $$d=\alpha_i r_{k-i-1}+\beta_i(r_{k-i-2}-r_{k-i-1}q_{k-i})=\beta_i r_{k-i-2}+(\alpha_i -\beta_i q_{k-i})r_{k-i-1} $$
-    para $i=0,\dots,k$ (definiendo $r_0=r$, $r_{-1}=b$, $r_{-2}=a$ y $q_0=q$). Por tanto,
-    $$(\alpha_{i+1},\beta_{i+1})=\begin{cases}
-        (1, -q_k) & i=0 \\
-        (\beta_i, \alpha_i-\beta_iq_{k-i}) & i = 1,\dots,k
-    \end{cases}$$
-\end{reader}
+Veamos como definir una función recursiva para calcular los coeficientes de Bézout. Supongamos que $d=\alpha_i r_{k-i-1} + \beta_i r_{k-i}$, como $r_{k-i-2}=r_{k-i-1}q_{k-i}+r_{k-i}$, se obtiene que
+$$d=\alpha_i r_{k-i-1}+\beta_i(r_{k-i-2}-r_{k-i-1}q_{k-i})=\beta_i r_{k-i-2}+(\alpha_i -\beta_i q_{k-i})r_{k-i-1} $$
+para $i=0,\dots,k$ (definiendo $r_0=r$, $r_{-1}=b$, $r_{-2}=a$ y $q_0=q$). Por tanto,
+$$(\alpha_{i+1},\beta_{i+1})=\begin{cases}
+    (1, -q_k) & i=0 \\
+    (\beta_i, \alpha_i-\beta_iq_{k-i}) & i = 1,\dots,k
+\end{cases}$$
 
 En el próximo apartado (proposición \ref{div_num_enteros:prop:2}) demostraremos que si $m=\mcm{a,b}$ y $d=\mcd{a,b}$ entonces $md=\pm ab$. Esto permite calcular $m$ si conocemos $d$. Para el cálculo de mínimo común múltiplo de más de números utilizaremos:
 \begin{ejer}   
@@ -143,7 +141,7 @@ Se dice que $a$ y $b$ son {\it primos entre sí} si $\mcd{a,b}=1$.
     \end{enumerate}    
 \end{ejs}
 
-\begin{teo}[\textbf{de Euclides}].\label{div_num_enteros:teo:2}
+\begin{teo}[\textbf{de Euclides}]\label{div_num_enteros:teo:2}
     Si $a\mid bc$ y $\mcd{a,b}=1$ entonces $a\mid c$.
 \end{teo}
 
@@ -161,6 +159,18 @@ Se dice que $a$ y $b$ son {\it primos entre sí} si $\mcd{a,b}=1$.
 
 Cualquier número entero $p$ es divisible por $\pm 1$ y por $\pm p$. Diremos que $p$ es {\it primo} si estos son sus únicos divisores. El $1$ y el $-1$ no se consideran números primos.
 
-\begin{prop}
+\begin{prop}\label{div_num_enteros:prop:3}
     El conjunto de los números primos es infinito.
 \end{prop}
+
+\begin{proof}
+    Lo demostraremos viendo que, dado un conjunto finito de números primos $N=\set{p_1,\dots,p_m}$, siempre hay un número primo fuera de $N$. En efecto, consideremos $a=p_1\cdots p_m+1$. Si $b\mid a$, también $-b\mid a$; por tanto, $a$ tiene divisores positivos. Sea $p$ el menor de los divisores positivos de $a$ diferentes de $1$. Claramente, $p$ es primo. Si $p$ fuera uno de los $p_i$, dividiría a $p_1\cdots p_m$ y, por tanto, dividiría a $a-p_1\cdots p_m=1$. Esto es imposible, ya que $p\neq 1$. De ahí que $p\notin N$.
+\end{proof}
+
+\begin{prop}
+    Todo número entero $a$ no nulo, $a\neq \pm 1$, es producto de números primos.
+\end{prop}
+
+\begin{proof}
+    Tal como hemos visto en la demostración de la proposición \ref{div_num_enteros:prop:3}, $a$ tiene siempre un divisor primo $p_1\neq\pm 1$. Así pues, tenemos $a=p_1a_1$. Si $a_1\neq\pm 1$, eilijamos un divisor primo $p_2$ de $a_1$, y tendremos $a_1=p_2a_2$. Luego $a=p_1p_2a_2$. Repitamos el mismo proceso si $a_2\neq\pm 1$, y así sucesivamente. Ahora bien, $\abs{a_1}>\abs{a_2}>\cdots$. Llegará pues un momento en que tendremos $a=p_1\cdots (p_na_n)$ con $a_n=\pm 1$. Esto es una descomposición de $a$ en números primos.
+\end{proof}

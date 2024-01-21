@@ -10,7 +10,6 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{titlesec}
-\usepackage{tocloft}
 \usepackage{fancyhdr}    
 
 \hypersetup{pdfstartview=FitH}
@@ -23,9 +22,7 @@
 \fancyhead[R]{\textit{\thepage}}
 \clubpenalty=10000
 
-\renewcommand{\headrulewidth}{0pt}
 \renewcommand{\shorthandsspanish}{}
-
 \renewcommand*{\deg}{\normalfont\text{gr}\hspace*{1mm}}
 \renewcommand{\Im}{\operatorname{\rm Im}}
 \renewcommand{\Re}{\operatorname{\rm Re}}
@@ -40,17 +37,13 @@
 \newcommand{\mcm}[1]{\operatorname{\rm mcm}\left(#1\right)}
 \newcommand{\mcd}[1]{\operatorname{\rm mcd}\left(#1\right)}
 \newcommand{\cl}[1]{\left[#1\right]}
-\newcommand{\conj}[1]{\left\lbrace#1\right\rbrace}
+\newcommand{\set}[1]{\left\lbrace#1\right\rbrace}
 \newcommand{\suc}[1]{\left\lbrace#1\right\rbrace}
 \newcommand{\abs}[1]{\left| #1\right|}
 \newcommand{\ent}[1]{\left\lfloor #1\right\rfloor}
 \newcommand{\eps}{\varepsilon}
 \newcommand{\GL}{\operatorname{\rm GL}}
 \newcommand{\Aut}{\operatorname{\rm Aut}}
-
-\definecolor{customColor}{RGB}{138,43,226}
-\newenvironment{reader}
-{\color{customColor}}
 
 \newtheorem{teo}{Teorema}[chapter]
 \newtheorem{prop}{Proposición}[chapter]

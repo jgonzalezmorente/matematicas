@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1705688208 "/Users/prognio/src/matematicas/criptografia/src/main.tex" "main.pdf" "main" 1705688208 0
+["pdflatex"] 1705836877 "/Users/prognio/src/matematicas/criptografia/src/main.tex" "main.pdf" "main" 1705836877 0
   "/Users/prognio/src/matematicas/criptografia/src/main.tex" 1705686377 183 2a811c63d6fb4977d3942976d8782e11 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -176,19 +176,18 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/refcount/refcount.sty" 1576624809 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657483315 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/titlesec/titlesec.sty" 1625518490 48833 3b7b4cfab1a3d15596bfd3772a77ab65 ""
-  "/usr/local/texlive/2023/texmf-dist/tex/latex/tocloft/tocloft.sty" 1578692495 36103 3e78d14f0f4b1a30560fea5e04de805d ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty" 1655066402 56148 51a9a8571c07b9921892ae11063ae853 ""
   "/usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf" 1677365944 40745 87bb86a62d462f93a1efc6b0c65c872e ""
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1699791590 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1699791545 7883458 fdb503132b5a1ac18feb7aea3433bfea ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "config.tex" 1705686891 2580 8fed8ee6c04f95ddb86cb43958538403 ""
-  "main.aux" 1705688208 1546 aa898b512668da77ac23da0f0856ef4b "pdflatex"
-  "main.out" 1705688208 622 ca08d59d5922d02dafb00cc08a6cb5b6 "pdflatex"
+  "config.tex" 1705836858 2432 917032bfb492ba9ed983940a41b918cd ""
+  "main.aux" 1705836877 1546 aa898b512668da77ac23da0f0856ef4b "pdflatex"
+  "main.out" 1705836877 622 ca08d59d5922d02dafb00cc08a6cb5b6 "pdflatex"
   "main.tex" 1705686377 183 2a811c63d6fb4977d3942976d8782e11 ""
-  "main.toc" 1705688208 348 87e237fa426703d094dfec6dfa081a51 "pdflatex"
-  "simetricos.tex" 1705688207 32396 fb498b6c9f79980237f88e7ba024af53 ""
+  "main.toc" 1705836877 348 87e237fa426703d094dfec6dfa081a51 "pdflatex"
+  "simetricos.tex" 1705836876 32183 f566b0f0870ee01a44486d64259577ed ""
   (generated)
   "main.aux"
   "main.log"
