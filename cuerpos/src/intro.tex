@@ -1,20 +1,20 @@
 \chapter{Introducción}
 
 En la escuela aprendimos a resolver ecuaciones lineales
-\begin{equation}\label{eq:1}
+\begin{equation}\label{intro:eq:1}
     aX + b = 0
 \end{equation}
 y cuadráticas
-\begin{equation}\label{eq:2}
+\begin{equation}\label{intro:eq:2}
     aX^2 + bX + c = 0
 \end{equation}
-donde $a,b$ y $c$ son números y supondremos que $a\neq 0$. Es bien sabido que la única solución de la ecuación \ref{eq:1} es $-\frac{b}{a}$ y que la ecuación \ref{eq:2} tiene a lo sumo dos soluciones que se obtienen al elegir el signo de la raíz cuadrada de la siguiente expresión:
-\begin{equation}\label{eq:3}
+donde $a,b$ y $c$ son números y supondremos que $a\neq 0$. Es bien sabido que la única solución de la ecuación \ref{intro:eq:1} es $-\frac{b}{a}$ y que la ecuación \ref{intro:eq:2} tiene a lo sumo dos soluciones que se obtienen al elegir el signo de la raíz cuadrada de la siguiente expresión:
+\begin{equation}\label{intro:eq:3}
     \frac{-b\pm \sqrt{b^2-4ac}}{2a}    
 \end{equation}
-En realidad, si $b^2=4ac$, entonces la ecuación \ref{eq:2} tiene una única solución y, si nos restringimos a los números reales, entonces la ecuación no tiene solución si $b^2-4ac$ es negativo.
+En realidad, si $b^2=4ac$, entonces la ecuación \ref{intro:eq:2} tiene una única solución y, si nos restringimos a los números reales, entonces la ecuación no tiene solución si $b^2-4ac$ es negativo.
 
-Las ecuaciones \ref{eq:1} y \ref{eq:2} aparecen naturalmente en multitud de problemas y sus soluciones son conocidas desde tiempos de los babilonios. Sin embargo, hasta el Renacimiento no se descubrieron fórmulas para resolver las ecuaciones de tercer y cuarto grado, conocidas con el nombre de cúbicas y cuárticas respectivamente. Al parecer Scipione del Ferro (1465?-1526) fue el primero en descubrir una fórmula para resolver ecuaciones de tercer grado. Los descubrimientos de del Ferro no fueron divulgados y fueron redescubiertos más tarde por Nicolo Fontana (1500?-1557), conocido con el nombre de Tartaglia (``El Tartamudo''). El método para resolver la cúbica fue guardado en secreto por Tartaglia hasta que se lo comunicó a Gerolamo Cardano (1501-1576) con la condición de que no lo hiciera público. Sin embargo, Cardano rompió su promesa con Fontana y en 1545 publicó la fórmula de Tartaglia en su libro {\it Artis Magnae sive de Regulis Algebricis}, más conocido con el nombre de {\it Ars Magna}. En este libro Cardano no sólo publica la fórmula de Tartaglia, sino también la solución de la cuártica que entretanto había sido descubierta por Ludovico Ferrai (1522-1565).
+Las ecuaciones \ref{intro:eq:1} y \ref{intro:eq:2} aparecen naturalmente en multitud de problemas y sus soluciones son conocidas desde tiempos de los babilonios. Sin embargo, hasta el Renacimiento no se descubrieron fórmulas para resolver las ecuaciones de tercer y cuarto grado, conocidas con el nombre de cúbicas y cuárticas respectivamente. Al parecer Scipione del Ferro (1465?-1526) fue el primero en descubrir una fórmula para resolver ecuaciones de tercer grado. Los descubrimientos de del Ferro no fueron divulgados y fueron redescubiertos más tarde por Nicolo Fontana (1500?-1557), conocido con el nombre de Tartaglia (``El Tartamudo''). El método para resolver la cúbica fue guardado en secreto por Tartaglia hasta que se lo comunicó a Gerolamo Cardano (1501-1576) con la condición de que no lo hiciera público. Sin embargo, Cardano rompió su promesa con Fontana y en 1545 publicó la fórmula de Tartaglia en su libro {\it Artis Magnae sive de Regulis Algebricis}, más conocido con el nombre de {\it Ars Magna}. En este libro Cardano no sólo publica la fórmula de Tartaglia, sino también la solución de la cuártica que entretanto había sido descubierta por Ludovico Ferrai (1522-1565).
 
 Vamos a ver como resolver la cúbica
 \begin{equation}
@@ -33,13 +33,13 @@ $$Y=X+\frac{B}{3}, \quad p=C-\frac{B^2}{3}, \quad q=D+\frac{2B^3}{27}-\frac{BC}{
 de forma que la ecuación anterior toma la forma $Y^3+pY+q=0$.
 
 Por tanto podemos concentrarnos en las ecuaciones de la siguiente forma
-\begin{equation}\label{eq:4}
+\begin{equation}\label{intro:eq:4}
     X^3+pX+q=0
 \end{equation}
 
-Por ejemplo, podemos plantearnos el problema de calcular la longitud de las aristas de un cubo cuyo volumen sea seis unidades mayor que el área total de las caras exteriores. Si $X$ es la longitud de una arista, entonces el volumen $X^3$ y cada una de las seis caras exteriores tiene un área igual a $X^2$. Por tanto $X$ satisface la ecuación
+Por ejemplo, podemos plantearnos el problema de calcular la longitud de las aristas de un cubo cuyo volumen sea seis unidades mayor que el área total de las caras exteriores. Si $X$ es la longitud de una arista, entonces el volumen es $X^3$ y cada una de las seis caras exteriores tiene un área igual a $X^2$. Por tanto $X$ satisface la ecuación
 $$X^3=6X^2+6\quad\text{ó}\quad X^3-6X^2-6=0$$
-Poniendo $Y=X+2$ nos quedamos con la ecuación
+Poniendo $Y=X-2$ nos quedamos con la ecuación
 \begin{equation*}
     \begin{split}
         0 & = (Y+2)^3 - 6(Y+2)^2 - 6 \\
@@ -47,9 +47,9 @@ Poniendo $Y=X+2$ nos quedamos con la ecuación
           & = Y^3 -12Y - 22
     \end{split}
 \end{equation*}
-Para resolver la ecuación \ref{eq:4} del Ferro y Tartaglia ponían
+Para resolver la ecuación \ref{intro:eq:4} del Ferro y Tartaglia ponían
 $$X=u+v$$
-con lo que la ecuación \ref{eq:4} se convierte en
+con lo que la ecuación \ref{intro:eq:4} se convierte en
 $$u^3+3u^2v+3uv^2+v^3+pu+pv+q=0$$
 o
 $$u^3+v^3+(3uv+p)(u+v)+q=0$$
@@ -58,6 +58,19 @@ $$u^3+v^3+q=0, \quad v=-\frac{p}{3u}$$
 de donde se obtiene
 $$u^3-\frac{p^3}{27u^3}+q=0$$
 Multiplicando por $u^3$ obtenemos
-\begin{equation}\label{eq:5}
+\begin{equation}\label{intro:eq:5}
     u^6+qu^3-\left(\frac{p}{3}\right)^3=0
 \end{equation}
+que parece más complicada que la ecuación original de grado $3$ ya que tiene grado $6$. Sin embargo la ecuación \ref{intro:eq:5} es una ecuación de grado $2$ en $u^3$ de donde deducimos que
+$$u^3=\frac{-q\pm\sqrt{q^2+4(p/3)^3}}{2}=-\frac{q}{2}\pm\sqrt{\frac{q^2}{4}+\left(\frac{p}{3}\right)^3}$$
+Lo que proporciona $6$ soluciones de la ecuación \ref{intro:eq:5}, ya que si
+$$\omega=e^{2\pi i/3}=\frac{-1+\sqrt{-3}}{2}$$
+entonces $\omega^3=1$, con lo que si $u_0$ y $u_1$ son raíces cúbicas de $-\frac{q}{2}+\sqrt{\frac{q^2}{4}+\left(\frac{p}{3}\right)^3}$ y $-\frac{q}{2}-\sqrt{\frac{q^2}{4}+\left(\frac{p}{3}\right)^3}$ respectivamente, entonces $u_0$, $\omega u_0$, $\omega^2 u_0$ son raíces cúbicas de $-\frac{q}{2}+\sqrt{\frac{q^2}{4}+\left(\frac{p}{3}\right)^3}$ y $u_1$, $\omega u_1$, $\omega^2 u_1$ son raíces cúbicas de $-\frac{q}{2}-\sqrt{\frac{q^2}{4}+\left(\frac{p}{3}\right)^3}$. Por tanto, una vez calculado $v=-\frac{p}{3u}$, obtenemos una solución $X=u+v$ para cada uno de los seis valores obtenidos de $u$. Esto no puede ser correcto ya que una ecuación de grado tres tiene a lo sumo tres soluciones. A pesar de esto sólo obtendremos tres soluciones. En efecto, obsérvese que
+$$\left(-\frac{q}{2}+\sqrt{\frac{q^2}{4}+\left(\frac{p}{3}\right)^3}\right)\left(-\frac{q}{2}-\sqrt{\frac{q^2}{4}+\left(\frac{p}{3}\right)^3}\right)=-\left(\frac{p}{3}\right)^3=u^3v^3$$
+Por tanto, si $u$ es una raíz cúbica de $-\frac{q}{2}+\sqrt{\frac{q^2}{4}+\left(\frac{p}{3}\right)^3}$, entonces $v=-\frac{p}{3u}$ es una raíz cúbica de $-\frac{q}{2}-\sqrt{\frac{q^2}{4}+\left(\frac{p}{3}\right)^3}$. En conclusión, las seis soluciones de \ref{intro:eq:5}, son $u$, $\omega u$, $\omega^2 u$, $v=-\frac{p}{3u}$, $\omega v$ y $\omega^2 v$, como hemos impuesto que $uv=-\frac{p}{3}$, podemos unir las tres primeras con las tres segundas y obtener las tres soluciones siguientes de la ecuación original \ref{intro:eq:4}:
+$$\alpha_1=u+v, \quad \alpha_2=\omega u +\frac{1}{\omega}v=\omega u + \omega^2v, \quad \alpha_3=\omega^2 u + \frac{1}{\omega^2}v=\omega^2 u +\omega v$$
+Esto no tiene aspecto de una fórmula. Teniendo en cuenta la relación obtenida entre los cubos de $u$ y $v$ nos gustaría poner algo así como
+$$X=\sqrt[3]{-\frac{q}{2}+\sqrt{\frac{q^2}{4}+\left(\frac{p}{3}\right)^3}} + \sqrt[3]{-\frac{q}{2}-\sqrt{\frac{q^2}{4}+\left(\frac{p}{3}\right)^3}}$$
+lo que efectivamente nos servirá para calcular las tres soluciones de \ref{intro:eq:4}, si tomamos la siguiente precaución: Si $u$ es la primera raíz cúbica y $v$ es la segunda, entonces $uv=-\frac{p}{3}$.
+
+
